@@ -1,4 +1,3 @@
-javascript
 document.addEventListener("DOMContentLoaded", function () {
 
     // =========================================
@@ -189,7 +188,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
     // =========================================
     // 5. DIRECTORIO DOCENTE DESDE JSON
     // =========================================
@@ -214,17 +212,26 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     function normalizarTexto(texto) {
-
         return String(texto || "")
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
             .toLowerCase()
             .trim();
+    }
 
+    function convertirLista(valor) {
+        if (Array.isArray(valor)) {
+            return valor;
+        }
+
+        if (valor === undefined || valor === null || valor === "") {
+            return [];
+        }
+
+        return [valor];
     }
 
     function crearElemento(etiqueta, clase, texto) {
-
         const elemento = document.createElement(etiqueta);
 
         if (clase) {
@@ -236,40 +243,116 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         return elemento;
-
     }
 
     function agregarDato(tarjeta, etiqueta, valor) {
+        const valores = convertirLista(valor)
+            .filter(function (dato) {
+                return dato !== undefined &&
+                    dato !== null &&
+                    String(dato).trim() !== "";
+            });
 
-        if (!valor) {
+        if (valores.length === 0) {
             return;
         }
 
         const parrafo = crearElemento("p", "", "");
-
         const negrita = crearElemento("strong", "", etiqueta + ": ");
 
         parrafo.appendChild(negrita);
-        parrafo.appendChild(document.createTextNode(String(valor)));
+        parrafo.appendChild(
+            document.createTextNode(valores.join(", "))
+        );
 
         tarjeta.appendChild(parrafo);
+    }
 
+    function obtenerFoto(docente) {
+        return docente.foto || docente.imagen || "";
+    }
+
+    function obtenerAcademia(docente) {
+        return docente.academia || docente.area || "";
+    }
+
+    function obtenerMaterias(docente) {
+        return convertirLista(
+            docente.materiasAcademicas || docente.materias
+        );
+    }
+
+    // Permite que un docente pertenezca a UNA O VARIAS categorías.
+    function obtenerCategorias(docente) {
+        const categorias = [];
+
+        const tipos = convertirLista(
+            docente.tipo || docente.categoria
+        );
+
+        tipos.forEach(function (tipo) {
+            const texto = normalizarTexto(tipo);
+
+            if (
+                texto === "modulos" ||
+                texto.includes("modulo")
+            ) {
+                categorias.push("modulos");
+            } else if (
+                texto === "clubes" ||
+                texto.includes("club")
+            ) {
+                categorias.push("clubes");
+            } else if (
+                texto === "materias" ||
+                texto.includes("materia")
+            ) {
+                categorias.push("materias");
+            }
+        });
+
+        // También reconoce las categorías a partir de los datos.
+        if (convertirLista(docente.modulos).length > 0) {
+            categorias.push("modulos");
+        }
+
+        if (convertirLista(docente.clubes).length > 0) {
+            categorias.push("clubes");
+        }
+
+        if (obtenerMaterias(docente).length > 0) {
+            categorias.push("materias");
+        }
+
+        // Compatibilidad con registros antiguos.
+        const academia = normalizarTexto(obtenerAcademia(docente));
+
+        if (academia.includes("club")) {
+            categorias.push("clubes");
+        } else if (academia.includes("modulo")) {
+            categorias.push("modulos");
+        } else if (
+            academia.includes("materia") ||
+            academia.includes("academica")
+        ) {
+            categorias.push("materias");
+        }
+
+        // Elimina categorías repetidas.
+        return [...new Set(categorias)];
     }
 
     function crearTarjetaDocente(docente) {
-
         const tarjeta = crearElemento("article", "tarjeta");
 
-        // Fotografía del docente, si existe.
-        if (docente.imagen) {
+        // Fotografía.
+        const rutaFoto = obtenerFoto(docente);
 
+        if (rutaFoto) {
             const imagen = document.createElement("img");
 
-            imagen.src = docente.imagen;
-            imagen.alt = docente.nombre
-                ? "Fotografía de " + docente.nombre
-                : "Fotografía del docente";
-
+            imagen.src = rutaFoto;
+            imagen.alt = "Fotografía de " + docente.nombre;
             imagen.loading = "lazy";
 
             imagen.addEventListener("error", function () {
@@ -277,40 +360,49 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             tarjeta.appendChild(imagen);
-
+        } else {
+            tarjeta.appendChild(
+                crearElemento(
+                    "div",
+                    "espacio-foto-docente",
+                    "📷 Fotografía no disponible"
+                )
+            );
         }
 
         // Nombre.
         tarjeta.appendChild(
-            crearElemento(
-                "h3",
-                "",
-                docente.nombre || "Docente"
-            )
+            crearElemento("h3", "", docente.nombre || "Docente")
         );
 
-        // Información del docente.
-        agregarDato(tarjeta, "Área", docente.materia || docente.modulo || docente.club);
-        agregarDato(tarjeta, "Categoría", docente.categoria);
-        agregarDato(tarjeta, "Descripción", docente.descripcion);
+        // Información.
+        agregarDato(tarjeta, "Academia", obtenerAcademia(docente));
+        agregarDato(tarjeta, "Módulos", docente.modulos);
+        agregarDato(tarjeta, "Clubes", docente.clubes);
+        agregarDato(tarjeta, "Materias que imparte", obtenerMaterias(docente));
+        agregarDato(tarjeta, "Semestres", docente.semestres);
+        agregarDato(
+            tarjeta,
+            "Perfil profesional",
+            docente.perfil || docente.descripcion
+        );
 
         // Correo opcional.
         if (docente.correo) {
-
-            const correo = crearElemento("a", "boton-secundario", "Contactar por correo");
+            const correo = crearElemento(
+                "a",
+                "boton-secundario",
+                "Contactar por correo"
+            );
 
             correo.href = "mailto:" + docente.correo;
-
             tarjeta.appendChild(correo);
-
         }
 
         return tarjeta;
-
     }
 
     function mostrarDocentes() {
-
         if (!listaDocentes) {
             return;
         }
@@ -327,81 +419,75 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const docentesFiltrados = docentes.filter(function (docente) {
 
-            const categoriaDocente = normalizarTexto(docente.categoria);
+            // El docente puede aparecer en varias categorías.
+            const coincideCategoria =
+                obtenerCategorias(docente).includes(categoriaActual);
 
             const nombreDocente = normalizarTexto(docente.nombre);
 
-            const materiaDocente = normalizarTexto(
-                [
-                    docente.materia,
-                    docente.modulo,
-                    docente.club,
-                    docente.descripcion,
-                    docente.categoria
-                ].filter(Boolean).join(" ")
-            );
-
-            const coincideCategoria =
-                categoriaDocente === normalizarTexto(categoriaActual);
+            const informacionDocente = normalizarTexto([
+                obtenerAcademia(docente),
+                docente.perfil,
+                docente.descripcion,
+                ...convertirLista(docente.modulos),
+                ...convertirLista(docente.clubes),
+                ...obtenerMaterias(docente),
+                ...convertirLista(docente.semestres)
+            ].join(" "));
 
             const coincideNombre =
                 nombreDocente.includes(textoNombre);
 
             const coincideMateria =
-                materiaDocente.includes(textoMateria);
+                informacionDocente.includes(textoMateria);
 
-            return coincideCategoria && coincideNombre && coincideMateria;
-
+            return coincideCategoria &&
+                coincideNombre &&
+                coincideMateria;
         });
 
         if (tituloCategoria) {
-
             tituloCategoria.textContent =
-                nombresCategorias[categoriaActual] || "Directorio docente";
-
+                nombresCategorias[categoriaActual] ||
+                "Directorio docente";
         }
 
         if (docentesFiltrados.length === 0) {
-
             if (resultadoBusqueda) {
-
-                resultadoBusqueda.textContent = docentes.length === 0
-                    ? "No hay docentes registrados en esta categoría."
-                    : "No se encontraron docentes con esos criterios.";
-
+                if (docentes.length === 0) {
+                    resultadoBusqueda.textContent =
+                        "No hay docentes registrados en docentes.json.";
+                } else {
+                    resultadoBusqueda.textContent =
+                        "No se encontraron docentes en esta categoría con esos criterios.";
+                }
             }
 
             return;
-
         }
 
         const fragmento = document.createDocumentFragment();
 
         docentesFiltrados.forEach(function (docente) {
-
             fragmento.appendChild(crearTarjetaDocente(docente));
-
         });
 
         listaDocentes.appendChild(fragmento);
 
         if (resultadoBusqueda) {
-
             resultadoBusqueda.textContent =
                 docentesFiltrados.length === 1
                     ? "Se encontró 1 docente."
-                    : "Se encontraron " + docentesFiltrados.length + " docentes.";
-
+                    : "Se encontraron " +
+                      docentesFiltrados.length +
+                      " docentes.";
         }
-
     }
 
     function seleccionarCategoria(categoria) {
-
         categoriaActual = categoria;
 
         botonesCategoria.forEach(function (boton) {
-
             const seleccionado =
                 boton.dataset.categoriaDocente === categoriaActual;
 
@@ -411,23 +497,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 "aria-pressed",
                 String(seleccionado)
             );
-
         });
 
         mostrarDocentes();
-
     }
 
+    // Botones de las tres categorías.
     botonesCategoria.forEach(function (boton) {
-
         boton.addEventListener("click", function () {
-
-            seleccionarCategoria(boton.dataset.categoriaDocente);
-
+            seleccionarCategoria(
+                boton.dataset.categoriaDocente
+            );
         });
-
     });
 
+    // Buscadores.
     if (buscarNombre) {
         buscarNombre.addEventListener("input", mostrarDocentes);
     }
@@ -436,10 +520,9 @@ document.addEventListener("DOMContentLoaded", function () {
         buscarMateria.addEventListener("input", mostrarDocentes);
     }
 
+    // Limpiar ambos campos.
     if (botonLimpiar) {
-
         botonLimpiar.addEventListener("click", function () {
-
             if (buscarNombre) {
                 buscarNombre.value = "";
             }
@@ -449,70 +532,79 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             mostrarDocentes();
-
         });
-
     }
 
+    // Cargar docentes desde el archivo JSON.
     async function cargarDocentes() {
-
         if (!listaDocentes) {
             return;
         }
 
         if (resultadoBusqueda) {
-            resultadoBusqueda.textContent = "Cargando directorio docente...";
+            resultadoBusqueda.textContent =
+                "Cargando directorio docente...";
         }
 
         try {
-
-            const respuesta = await fetch("./docentes.json", {
+            const respuesta = await fetch("datos/docentes.json", {
                 cache: "no-store"
             });
 
             if (!respuesta.ok) {
-                throw new Error("No se pudo encontrar docentes.json.");
+                throw new Error(
+                    "Error HTTP " + respuesta.status
+                );
             }
 
             const datos = await respuesta.json();
 
             if (!Array.isArray(datos)) {
-                throw new Error("El archivo JSON debe contener una lista de docentes.");
+                throw new Error(
+                    "docentes.json debe contener una lista."
+                );
             }
 
             docentes = datos.filter(function (docente) {
-
                 return docente &&
                     typeof docente === "object" &&
                     typeof docente.nombre === "string" &&
-                    typeof docente.categoria === "string";
-
+                    docente.nombre.trim() !== "";
             });
+
+            // Respetar la categoría activa del HTML.
+            const botonActivo = document.querySelector(
+                "[data-categoria-docente].activo"
+            );
+
+            if (
+                botonActivo &&
+                nombresCategorias[botonActivo.dataset.categoriaDocente]
+            ) {
+                categoriaActual =
+                    botonActivo.dataset.categoriaDocente;
+            }
 
             mostrarDocentes();
 
         } catch (error) {
-
-            console.error("Error al cargar el directorio docente:", error);
+            console.error(
+                "Error al cargar docentes.json:",
+                error
+            );
 
             listaDocentes.replaceChildren();
 
             if (resultadoBusqueda) {
-
                 resultadoBusqueda.textContent =
-                    "No se pudo cargar el directorio. Verifica que docentes.json " +
-                    "exista junto a index.html y abre la página con un servidor local.";
-
+                    "No se pudo cargar docentes.json. Comprueba que esté junto a index.html y abre la página con Live Server.";
             }
-
         }
-
     }
 
     if (listaDocentes) {
         cargarDocentes();
     }
-
 
     // =========================================
     // 6. PREGUNTAS FRECUENTES
@@ -568,4 +660,3 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("ITACE DIGITAL 4.0: JavaScript cargado correctamente.");
 
 });
-

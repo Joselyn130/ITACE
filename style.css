@@ -1486,3 +1486,180 @@ section[id] {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+/* =========================================================
+   AJUSTES FINALES DE ESTILO
+   ITACE DIGITAL 4.0
+   Guinda + dorado para tarjetas, imágenes y multimedia
+   ========================================================= */
+
+/* Tarjetas y contenedores principales */
+.tarjeta,
+.tarjeta-plantel,
+.noticia,
+.video-tarjeta,
+.elemento-galeria,
+.imagen-destacada,
+.redes-admisiones,
+.tabla-contenedor,
+.boton-categoria,
+.buscador,
+.mas-informacion,
+.logos {
+    border: 3px solid var(--guinda) !important;
+    box-shadow:
+        0 0 0 2px var(--dorado),
+        var(--sombra) !important;
+}
+
+/* Imágenes dentro de las tarjetas */
+.tarjeta img,
+.tarjeta-plantel img,
+.noticia img,
+.elemento-galeria img,
+.imagen-destacada img,
+.imagen-tabla,
+.logos img,
+.perfil-itace img {
+    border: 3px solid var(--dorado) !important;
+    outline: 2px solid var(--guinda);
+    outline-offset: 1px;
+}
+
+/* Videos */
+.video-tarjeta video,
+video {
+    border: 3px solid var(--guinda) !important;
+    box-shadow: 0 0 0 2px var(--dorado) !important;
+    border-radius: 14px;
+}
+
+/* Botones de redes sociales */
+.boton-red-social {
+    min-width: 145px;
+    border: 2px solid var(--dorado) !important;
+    outline: 1px solid var(--guinda);
+    outline-offset: 1px;
+    text-align: center;
+}
+
+/* Caja "Más información" */
+.mas-informacion {
+    margin-top: 18px;
+    overflow: hidden;
+    background: var(--blanco);
+}
+
+.mas-informacion summary {
+    padding: 15px 18px;
+    color: var(--guinda);
+    background: #fff7df;
+    font-weight: 800;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 50px;
+}
+
+.mas-informacion summary::-webkit-details-marker {
+    display: none;
+}
+
+.mas-informacion summary::after {
+    content: "+";
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--dorado);
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.mas-informacion[open] summary {
+    background: var(--guinda);
+    color: var(--blanco);
+}
+
+.mas-informacion[open] summary::after {
+    content: "−";
+    color: var(--dorado-claro);
+}
+
+.mas-informacion p {
+    margin: 0;
+    padding: 18px;
+    border-top: 2px solid var(--dorado);
+}
+
+/* Espacio para el nombre en Contacto */
+.contacto-nombre {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 9px 14px;
+    border-left: 4px solid var(--dorado);
+    border-right: 2px solid var(--guinda);
+    border-radius: 8px;
+    background: #fff7df;
+    color: var(--guinda);
+    font-weight: 800;
+}
+
+/* Galería: marco doble guinda + dorado */
+.elemento-galeria {
+    outline: 2px solid var(--dorado);
+    outline-offset: 2px;
+}
+
+/* Tablas */
+.tabla-itace {
+    border: 3px solid var(--guinda) !important;
+    box-shadow: 0 0 0 2px var(--dorado) !important;
+}
+
+.tabla-itace th,
+.tabla-itace td {
+    border-color: var(--guinda) !important;
+}
+
+/* Mantener los elementos redondeados sin perder los bordes */
+.tarjeta,
+.tarjeta-plantel,
+.video-tarjeta,
+.elemento-galeria,
+.imagen-destacada,
+.redes-admisiones,
+.tabla-contenedor,
+.buscador,
+.mas-informacion {
+    border-radius: var(--radio);
+}
+
+/* Los botones no deben heredar el borde de las tarjetas */
+.tarjeta .boton,
+.tarjeta .boton-secundario,
+.redes-admisiones .boton-red-social {
+    box-shadow: none;
+}
+
+/* Mejor separación visual entre secciones */
+.seccion + .seccion {
+    border-top: 1px solid rgba(128, 0, 32, 0.08);
+}
+
+/* Responsive: que los botones de redes sigan viéndose bien */
+@media (max-width: 650px) {
+    .boton-red-social {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .mas-informacion summary {
+        padding: 13px 45px 13px 15px;
+    }
+
+    .mas-informacion p {
+        padding: 15px;
+    }
+}

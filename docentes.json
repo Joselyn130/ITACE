@@ -1,0 +1,654 @@
+
+[
+    {
+        "nombre": "Laura Esmeralda Heredia Blanco",
+        "academia": [
+            "Física y Química",
+            "Biología"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Ciencias 1",
+            "Ciencias 3",
+            "Ciencias 5"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/laura.jpg",
+        "perfil": "Docente especializada en Física y Química. Su formación principal es como bióloga.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Luis Enrique Lerma Martínez",
+        "academia": [
+            "Licenciatura en Pedagogía",
+            "Ingeniería Petrolera",
+            "Diplomado en competencias docentes"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Lengua y Comunicación 1",
+            "Lengua y Comunicación 3",
+            "Socioemocionales",
+            "Conciencia Histórica"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/lerma.jpg",
+        "perfil": "Presidente de la academia de Conciencia Histórica. Cuenta con formación en Pedagogía, Ingeniería Petrolera y un Diplomado en Competencias Docentes. Tiene 33 años en el ITACE.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Brenda Itzel Herrera García",
+        "academia": [
+            "Técnica en Informática",
+            "Ingeniería en Sistemas Computacionales",
+            "Maestría en Educación"
+        ],
+        "tipo": "modulos",
+        "modulos": [
+            "Inteligencia Artificial"
+        ],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Cultura Digital"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º"
+        ],
+        "foto": "imagenes/brenda.jpg",
+        "perfil": "Docente del área de Informática. Imparte Inteligencia Artificial y Cultura Digital. Cuenta con formación como Técnica en Informática, Ingeniera en Sistemas Computacionales y Maestría en Educación. Tiene 4 años en el ITACE.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Liliana Rosas Pacheco",
+        "academia": [
+            "Licenciatura en Pedagogía",
+            "Maestría en Educación Media Superior",
+            "Doctorado en Educación"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Humanidades",
+            "Pensamiento Filosófico",
+            "Conciencia Histórica",
+            "Lengua y Comunicación",
+            "Formación Socioemocional"
+        ],
+        "semestres": [
+            "1.º",
+            "5.º"
+        ],
+        "foto": "imagenes/liliana.jpg",
+        "perfil": "Docente del área de Humanidades. Imparte Pensamiento Filosófico, Conciencia Histórica, Lengua y Comunicación y Formación Socioemocional. Cuenta con Licenciatura en Pedagogía, Maestría en Educación Media Superior y Doctorado en Educación. Tiene 5 años en el ITACE.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Juan Pablo Torres Adame",
+        "academia": [
+            "Licenciatura en Información Administrativa",
+            "Maestría en Ciencias de la Enseñanza"
+        ],
+        "tipo": "modulos",
+        "modulos": [
+            "Programación"
+        ],
+        "clubes": [
+            "Robótica"
+        ],
+        "materiasAcademicas": [
+            "Cultura Digital"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/juanpablo.jpg",
+        "perfil": "Docente que imparte Programación y Cultura Digital. También participa en el club de Robótica y ofrece cursos de Excel los sábados.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Ulises Solís Rieboles",
+        "academia": [
+            "Químico Farmacéutico Biólogo",
+            "Análisis Clínicos",
+            "Educación"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Ciencias Naturales 1",
+            "Ciencias Naturales 3",
+            "Ciencias Naturales 5",
+            "Química"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/ulises.jpg",
+        "perfil": "Docente del área de Ciencias Naturales y Química. Es Químico Farmacéutico Biólogo, cuenta con dos maestrías relacionadas con Análisis Clínicos y Educación y actualmente estudia un Doctorado en Educación.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Benjamin Limón Martínez",
+        "academia": [
+            "Informática en Sistemas",
+            "Administración en Productividad y Calidad",
+            "Maestría en Educación"
+        ],
+        "tipo": "modulos",
+        "modulos": [
+            "Programación",
+            "Inteligencia Artificial"
+        ],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Cultura Digital"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/benjamin.jpg",
+        "perfil": "Docente del área de Informática. Imparte Programación, Inteligencia Artificial y Cultura Digital. Cuenta con formación en Administración en Productividad y Calidad y Maestría en Educación. Tiene 5 años en el ITACE.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Felipe Hernández González",
+        "academia": [
+            "Ingeniería en Electrónica"
+        ],
+        "tipo": "modulos",
+        "modulos": [
+            "Electrónica",
+            "Semiconductores"
+        ],
+        "clubes": [],
+        "materiasAcademicas": [],
+        "semestres": [
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/felipe.jpg",
+        "perfil": "Docente especializado en Ingeniería en Electrónica. Imparte módulos de Electrónica y Semiconductores.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Erik Ramírez Solís",
+        "academia": [
+            "Ingeniería Electromecánica",
+            "Maestría en Educación"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Pensamiento Matemático"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/erik.jpg",
+        "perfil": "Docente de Pensamiento Matemático. Cuenta con Licenciatura en Ingeniería Electromecánica y Maestría en Educación. Tiene 21 años en el ITACE.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Mildred Yasmín Reyes Norberto",
+        "academia": [
+            "Ingeniería Química",
+            "Maestría en Docencia"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Temas Selectos de Matemáticas 2"
+        ],
+        "semestres": [
+            "5.º"
+        ],
+        "foto": "imagenes/mildred.jpg",
+        "perfil": "Docente con formación en Ingeniería Química y Maestría en Docencia.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "José López Vázquez",
+        "academia": [
+            "Ingeniería Industrial"
+        ],
+        "tipo": "modulos",
+        "modulos": [
+            "Mantenimiento Industrial"
+        ],
+        "clubes": [],
+        "materiasAcademicas": [],
+        "semestres": [
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/joselopez.jpg",
+        "perfil": "Docente del módulo de Mantenimiento Industrial. Imparte en tercer y quinto semestre, en turno vespertino.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Yuridia Lizbeth Cepeda Ramos",
+        "academia": [
+            "Ingeniería Industrial",
+            "Licenciatura en Matemáticas",
+            "Maestría en Educación e Innovación Educativa"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Inglés",
+            "Temas Selectos de Matemáticas 2"
+        ],
+        "semestres": [],
+        "foto": "imagenes/yuridia.jpg",
+        "perfil": "Ingeniera Industrial y Licenciada en Matemáticas. Cuenta con Maestría en Educación e Innovación Educativa y actualmente estudia un Doctorado en Educación.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Romualdo Guadalupe de la Cruz",
+        "academia": [
+            "Mantenimiento Industrial",
+            "Mantenimiento en Instalaciones Petroleras"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Pensamiento Matemático 1",
+            "Pensamiento Matemático 3"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º"
+        ],
+        "foto": "imagenes/romualdo.jpg",
+        "perfil": "Docente con formación en Mantenimiento Industrial y Mantenimiento en Instalaciones Petroleras.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Nohemí Quintanilla Arcos",
+        "academia": [
+            "Docente"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [],
+        "semestres": [],
+        "foto": "imagenes/nohemi.jpg",
+        "perfil": "Información profesional pendiente de completar.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Rafael Villasana",
+        "academia": [
+            "Historia",
+            "Deportes"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Conciencia Histórica",
+            "Cultura Digital",
+            "Lengua y Comunicación",
+            "Educación Física"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/rafael.jpg",
+        "perfil": "Docente especializado en Historia y Deportes.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Diana Janeth Uriegas Garza",
+        "academia": [
+            "Licenciatura en Administración"
+        ],
+        "tipo": "clubes",
+        "modulos": [],
+        "clubes": [
+            "Oratoria"
+        ],
+        "materiasAcademicas": [
+            "Habilidades para hablar en público",
+            "Matemáticas Básicas"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/diana.jpg",
+        "perfil": "Licenciada en Administración por el Instituto Tecnológico de Reynosa. Participa en el área de Oratoria.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "José Luis Gonzales López",
+        "academia": [
+            "Semiconductores"
+        ],
+        "tipo": "modulos",
+        "modulos": [
+            "Semiconductores"
+        ],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Pensamiento Matemático 3"
+        ],
+        "semestres": [
+            "3.º"
+        ],
+        "foto": "imagenes/jose-luis.jpg",
+        "perfil": "Docente relacionado con el módulo de Semiconductores.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Javier Alfonso Acosta García",
+        "academia": [
+            "Ingeniería Electromecánica",
+            "Maestría en Ingeniería Industrial y Manufactura Avanzada"
+        ],
+        "tipo": "modulos",
+        "modulos": [
+            "Mantenimiento Automotriz"
+        ],
+        "clubes": [],
+        "materiasAcademicas": [],
+        "semestres": [
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/javier.jpg",
+        "perfil": "Ingeniero Electromecánico con Maestría en Ingeniería Industrial y Manufactura Avanzada. Imparte el módulo de Mantenimiento Automotriz.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Mario Alonso Santoyo Arroyo",
+        "academia": [
+            "Ingeniería Industrial",
+            "Maestría en Educación",
+            "Técnico en Refrigeración y Climatización"
+        ],
+        "tipo": "modulos",
+        "modulos": [
+            "Mantenimiento Industrial 2",
+            "Mantenimiento Industrial 4"
+        ],
+        "clubes": [],
+        "materiasAcademicas": [],
+        "semestres": [
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/mario.jpg",
+        "perfil": "Docente con formación como Ingeniero Industrial, Maestría en Educación y carrera técnica en Refrigeración y Climatización.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Erika Aidé Pérez Abrego",
+        "academia": [
+            "Ingeniería Industrial y de Sistemas",
+            "Maestría en Educación"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Ciencias Naturales",
+            "Humanidades"
+        ],
+        "semestres": [
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/erika.jpg",
+        "perfil": "Docente con formación en Ingeniería Industrial y de Sistemas y Maestría en Educación.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Bertha Alicia Zapata Aldape",
+        "academia": [
+            "Matemáticas"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Matemáticas"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º"
+        ],
+        "foto": "imagenes/bertha.jpg",
+        "perfil": "Docente del área de Matemáticas. Cuenta con Doctorado y tiene 2 años y medio en el ITACE.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Carlos Melecio Carmona Olivares",
+        "academia": [
+            "Módulo Profesional en Diseño Gráfico",
+            "Inglés",
+            "Diseño Gráfico"
+        ],
+        "tipo": "modulos",
+        "modulos": [
+            "Diseño Gráfico"
+        ],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Inglés"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º"
+        ],
+        "foto": "imagenes/carlos.jpg",
+        "perfil": "Docente del módulo profesional de Diseño Gráfico e Inglés. Cuenta con formación en Diseño Gráfico, Ingeniería y Maestría en Educación. Tiene 2 años en el ITACE.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Grecia Ávalos Ramos",
+        "academia": [
+            "Lengua y Comunicación"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Lengua y Comunicación"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º"
+        ],
+        "foto": "imagenes/grecia.jpg",
+        "perfil": "Docente del área de Lengua y Comunicación. Cuenta con Licenciatura y Maestría. Tiene 3 años en el ITACE.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Sandra Catalina Silva Camacho",
+        "academia": [
+            "Comunicación"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Comunicación"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/sandra.jpg",
+        "perfil": "Docente del área de Comunicación. Cuenta con Maestría en Metodología de la Enseñanza y tiene 25 años en el ITACE.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Carla Valeria Moran Lerma",
+        "academia": [
+            "Pensamiento Filosófico",
+            "Ciencias Sociales",
+            "Cultura Digital"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Pensamiento Filosófico",
+            "Ciencias Sociales",
+            "Cultura Digital"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º"
+        ],
+        "foto": "imagenes/carla.jpg",
+        "perfil": "Docente del área de Pensamiento Filosófico, Ciencias Sociales y Cultura Digital. Cuenta con Maestría y tiene 33 años en el ITACE.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Isidro de León Flores",
+        "academia": [
+            "Psicopedagogía",
+            "Pedagogía"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Educación Física"
+        ],
+        "semestres": [
+            "1.º",
+            "2.º",
+            "3.º",
+            "4.º",
+            "5.º",
+            "6.º"
+        ],
+        "foto": "imagenes/isidro.jpg",
+        "perfil": "Docente con formación en Licenciatura en Psicopedagogía y Licenciatura en Pedagogía. Tiene 29 años en el ITACE.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Norma Elena Torres Quiñones",
+        "academia": [
+            "Ciencias Naturales",
+            "Ingeniería Química",
+            "Docencia"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            "Ciencias Naturales"
+        ],
+        "semestres": [
+            "1.º",
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/norma.jpg",
+        "perfil": "Docente de Ciencias Naturales. Cuenta con formación en Ingeniería Química y Maestría en Docencia. Tiene 26 años en el ITACE.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Walter Allan Barrera Cerda",
+        "academia": [
+            "Comunicación",
+            "Ingeniería Industrial",
+            "Administración"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [
+            "Rondalla"
+        ],
+        "materiasAcademicas": [
+            "Inglés 3"
+        ],
+        "semestres": [
+            "3.º"
+        ],
+        "foto": "imagenes/walter.jpg",
+        "perfil": "Docente del área de Comunicación. Imparte Inglés 3 y participa en el club de Rondalla. Cuenta con formación en Ingeniería Industrial y Administración y tiene 13 años en el ITACE.",
+        "correo": ""
+    },
+
+    {
+        "nombre": "Omar Saúl González Alatriste",
+        "academia": [
+            "Prefectura"
+        ],
+        "tipo": "modulos",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [],
+        "semestres": [
+            "3.º"
+        ],
+        "foto": "imagenes/omar.jpg",
+        "perfil": "Prefecto y responsable de tercer semestre. Tiene 32 años en el ITACE.",
+        "correo": ""
+    }
+]
+
