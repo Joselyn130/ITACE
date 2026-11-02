@@ -1663,3 +1663,145 @@ video {
         padding: 15px;
     }
 }
+
+/* =========================================
+   MENÚ FLOTANTE DESPLEGABLE ITACE
+   ÚNICO AJUSTE: PANEL CON DESPLAZAMIENTO
+========================================= */
+
+.menu-flotante {
+    position: fixed !important;
+    right: 22px !important;
+    bottom: 85px !important;
+    z-index: 999999 !important;
+}
+
+.menu-flotante .menu-desplegable {
+    position: static !important;
+    display: block !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* BOTÓN DEL MENÚ */
+.menu-flotante .menu-desplegable > summary {
+    width: 50px !important;
+    height: 50px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: var(--guinda) !important;
+    color: white !important;
+    border: 3px solid var(--dorado) !important;
+    border-radius: 50% !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    list-style: none !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,.3) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.menu-flotante .menu-desplegable > summary::-webkit-details-marker {
+    display: none !important;
+}
+
+/* PANEL: ALTURA LIMITADA Y DESPLAZAMIENTO VERTICAL */
+.menu-flotante .menu-desplegable > .menu-enlaces {
+    display: none !important;
+    position: fixed !important;
+    right: 82px !important;
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+    width: 260px !important;
+    height: 65vh !important;
+    height: min(65vh, calc(100dvh - 40px)) !important;
+    max-height: calc(100vh - 40px) !important;
+    min-height: 0 !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    background: var(--guinda) !important;
+    border: 3px solid var(--dorado) !important;
+    border-radius: 14px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior-y: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+    scrollbar-width: auto !important;
+    scrollbar-color: var(--dorado) #5c0018 !important;
+    box-shadow: 0 5px 18px rgba(0,0,0,.3) !important;
+}
+
+/* MOSTRAR EL PANEL AL ABRIR EL DETAILS */
+.menu-flotante .menu-desplegable[open] > .menu-enlaces {
+    display: flex !important;
+}
+
+/* BARRA DE DESPLAZAMIENTO */
+.menu-flotante .menu-enlaces::-webkit-scrollbar {
+    width: 12px !important;
+}
+
+.menu-flotante .menu-enlaces::-webkit-scrollbar-track {
+    background: #5c0018 !important;
+    border-radius: 10px !important;
+}
+
+.menu-flotante .menu-enlaces::-webkit-scrollbar-thumb {
+    background: var(--dorado) !important;
+    border-radius: 10px !important;
+}
+
+/* ENLACES: EVITAR QUE SE ENCOJAN */
+.menu-flotante .menu-desplegable > .menu-enlaces a {
+    display: block !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    min-height: 45px !important;
+    box-sizing: border-box !important;
+    padding: 12px !important;
+    color: white !important;
+    text-decoration: none !important;
+    text-align: left !important;
+    white-space: normal !important;
+    border-bottom: 1px solid rgba(255,255,255,.25) !important;
+    border-radius: 5px !important;
+}
+
+.menu-flotante .menu-desplegable > .menu-enlaces a:hover {
+    background: var(--dorado) !important;
+    color: var(--guinda) !important;
+}
+
+/* CELULARES */
+@media (max-width: 650px) {
+    .menu-flotante {
+        right: 15px !important;
+        bottom: 85px !important;
+    }
+
+    .menu-flotante .menu-desplegable > .menu-enlaces {
+        right: 72px !important;
+        top: 50% !important;
+        bottom: auto !important;
+        transform: translateY(-50%) !important;
+        width: 230px !important;
+        height: 60vh !important;
+        height: min(60vh, calc(100dvh - 40px)) !important;
+        max-height: calc(100vh - 40px) !important;
+    }
+}

@@ -23,48 +23,49 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+// =========================================
+// 2. MENÚ FLOTANTE DESPLEGABLE ITACE
+// =========================================
 
+const menuDesplegable = document.querySelector(
+    ".menu-flotante .menu-desplegable"
+);
 
-    // =========================================
-    // 2. MENÚ RESPONSIVO PARA CELULAR
-    // =========================================
+if (menuDesplegable) {
 
-    const botonMenu = document.getElementById("menu-toggle");
-    const enlacesMenu = document.getElementById("menu-enlaces");
+    const enlacesMenu = menuDesplegable.querySelector(".menu-enlaces");
 
-    if (botonMenu && enlacesMenu) {
+    if (enlacesMenu) {
 
-        botonMenu.addEventListener("click", function () {
-
-            const menuAbierto = enlacesMenu.classList.toggle("abierto");
-
-            botonMenu.setAttribute(
-                "aria-expanded",
-                String(menuAbierto)
-            );
-
-            botonMenu.textContent = menuAbierto
-                ? "✕ Cerrar menú"
-                : "☰ Menú";
-
-        });
-
+        // Cerrar al seleccionar un apartado
         enlacesMenu.querySelectorAll("a").forEach(function (enlace) {
 
             enlace.addEventListener("click", function () {
-
-                enlacesMenu.classList.remove("abierto");
-
-                botonMenu.setAttribute("aria-expanded", "false");
-                botonMenu.textContent = "☰ Menú";
-
+                menuDesplegable.removeAttribute("open");
             });
 
         });
 
+        // Cerrar al presionar Escape
+        document.addEventListener("keydown", function (evento) {
+
+            if (evento.key === "Escape") {
+                menuDesplegable.removeAttribute("open");
+            }
+
+        });
+
+        // Cerrar al hacer clic fuera
+        document.addEventListener("click", function (evento) {
+
+            if (!menuDesplegable.contains(evento.target)) {
+                menuDesplegable.removeAttribute("open");
+            }
+
+        });
+
     }
-
-
+}
     // =========================================
     // 3. BOTÓN PARA VOLVER ARRIBA
     // =========================================

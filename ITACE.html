@@ -114,7 +114,7 @@
 <!-- PORTADA ORIGINAL -->
 <div class="portada" id="portada">
     <div class="portada-contenido">
-        <img  src="imagenes/logo itace.jpg" alt="Logo del ITACE">
+        <img class="logo-portada" src="imagenes/logo itace.jpg" alt="Logo del ITACE">
 
         <span class="etiqueta">✦ EDUCACIÓN · TECNOLOGÍA · FUTURO ✦</span>
 
@@ -154,19 +154,14 @@
         <p>Formación, conocimiento y oportunidades para el futuro.</p>
         <p class="aviso">Proyecto académico de Desarrollo Web · Grupo 502 B</p>
     </header>
+<!-- MENÚ FLOTANTE -->
+<nav class="menu-flotante" aria-label="Menú principal">
 
-    <!-- MENÚ DE NAVEGACIÓN -->
-    <nav class="menu" aria-label="Menú principal">
-        <button
-            class="menu-toggle"
-            id="menu-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="menu-enlaces">
-            ☰ Menú
-        </button>
+    <details class="menu-desplegable">
 
-        <div class="menu-enlaces" id="menu-enlaces">
+        <summary>☰</summary>
+
+        <div class="menu-enlaces">
             <a href="#inicio">Inicio</a>
             <a href="#oportunidad">Tu futuro</a>
             <a href="#nosotros">Conoce al ITACE</a>
@@ -186,8 +181,10 @@
             <a href="#preguntas">Preguntas frecuentes</a>
             <a href="#contacto">Contacto</a>
         </div>
-    </nav>
 
+    </details>
+
+</nav>
     <main id="contenido">
 
         <!-- MENSAJE CON IMAGEN DE FONDO -->
@@ -803,12 +800,12 @@
             <h2 class="titulo-seccion">Noticias y actividades</h2>
             <div class="linea"></div>
 
-            <div class="tarjetas dos">
+            <div class="tarjetas noticias">
                 <article class="tarjeta noticia">
-                    <img src="imagenes/noticiabecas.jpg
-                    " alt="becas" loading="lazy">
+                    <img src="imagenes/noticabecas.jpg"
+                     alt="becas" loading="lazy">
                     <div>
-                        <h3>Becas</h3>
+                        <h3>becas</h3>
                         <p>
                             EL dia 21 de septiembre del 2026, se llevo acabo una junta para las Becas, dirigida a estudiantes del primer semestre.
                         </p>
@@ -986,8 +983,7 @@
 
             <p class="subtitulo">
                 Encuentra al personal docente por módulos, clubes o materias
-                académicas. La información se organiza en un archivo JSON
-                y JavaScript genera las tarjetas del directorio.
+                académicas.
             </p>
 
             <div class="categorias-docentes">
@@ -1088,6 +1084,15 @@
                         Himno creado por Juan Pablo Moreno de la Cruz
                         intérprete los almunos del grupo 502-B Progrmacion.
                     </p>
+
+                    <details class="letra-himno">
+                        <summary>🎵 Ver letra del Himno del ITACE</summary>
+                        <div class="contenido-letra">
+                            <img src="imagenes/letra-himno-itace.jpg"
+                                 alt="Letra del Himno del ITACE"
+                                 loading="lazy">
+                        </div>
+                    </details>
                 </article>
 
                 <article class="tarjeta video-tarjeta">
@@ -1104,6 +1109,15 @@
                         Rafael Antonio Perez Perez (compositor) y Alfredo Tamayo Marin (musical)
                     intérprete los almunos del grupo 502-B Progrmacion
                     </p>
+
+                    <details class="letra-himno">
+                        <summary>🎵 Ver letra del Himno a Tamaulipas</summary>
+                        <div class="contenido-letra">
+                            <img src="imagenes/letra-himno-tamaulipas.jpg"
+                                 alt="Letra del Himno a Tamaulipas"
+                                 loading="lazy">
+                        </div>
+                    </details>
                 </article>
             </div>
 
