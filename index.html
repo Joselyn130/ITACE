@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce el ITACE Reynosa, sus carreras, instalaciones, clubes y actividades estudiantiles.">
+    <meta name="theme-color" content="#800020">
+    <title>ITACE | Formación para el futuro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+
+    <style>
+        /* =========================================================
+           BORDES GUINDA + DORADO
+           ========================================================= */
+        :root{
+            --guinda-itace:#800020;
+            --dorado-itace:#c9a227;
+        }
+
+        .tarjeta,
+        .tarjeta-plantel,
+        .foto,
+        .noticia,
+        .video-tarjeta,
+        .elemento-galeria,
+        .bienvenida,
+        .imagen-destacada,
+        .redes-admisiones,
+        .logos,
+        .tabla-contenedor,
+        .categorias-docentes,
+        .directorio-cabecera,
+        .buscador,
+        details,
+        .galeria-simple,
+        .galeria-grid,
+        .videos-grid {
+            border: 3px solid var(--guinda-itace) !important;
+            box-shadow: 0 0 0 2px var(--dorado-itace) !important;
+        }
+
+        .tarjeta img,
+        .tarjeta-plantel img,
+        .foto img,
+        .noticia img,
+        .elemento-galeria img,
+        .imagen-destacada img,
+        .imagen-tabla,
+        .logos img,
+        .perfil-itace img,
+        video {
+            border: 3px solid var(--dorado-itace) !important;
+            box-shadow: 0 0 0 2px var(--guinda-itace) !important;
+            box-sizing: border-box;
+        }
+
+        .elemento-galeria button {
+            border: 3px solid var(--guinda-itace) !important;
+            box-shadow: 0 0 0 2px var(--dorado-itace) !important;
+            border-radius: inherit;
+        }
+
+        .tabla-itace {
+            border: 3px solid var(--guinda-itace) !important;
+            box-shadow: 0 0 0 2px var(--dorado-itace) !important;
+        }
+
+        .tabla-itace th,
+        .tabla-itace td {
+            border-color: var(--guinda-itace) !important;
+        }
+
+        .redes-admisiones .tarjeta,
+        .directorio .tarjetas .tarjeta {
+            border: 3px solid var(--guinda-itace) !important;
+            box-shadow: 0 0 0 2px var(--dorado-itace) !important;
+        }
+
+        /* El botón de redes queda listo para que cambies únicamente el href. */
+        .boton-red-social {
+            border: 2px solid var(--dorado-itace) !important;
+            box-shadow: 0 0 0 1px var(--guinda-itace) !important;
+        }
+
+        /* Caja desplegable de Más información */
+        .mas-informacion {
+            margin-top: 15px;
+            padding: 0;
+            border: 3px solid var(--guinda-itace) !important;
+            box-shadow: 0 0 0 2px var(--dorado-itace) !important;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .mas-informacion summary {
+            cursor: pointer;
+            padding: 14px 18px;
+            font-weight: 700;
+            color: var(--guinda-itace);
+            background: rgba(201,162,39,.10);
+            list-style-position: inside;
+        }
+
+        .mas-informacion p {
+            padding: 0 18px 18px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- PORTADA ORIGINAL -->
+<div class="portada" id="portada">
+    <div class="portada-contenido">
+        <img class="logo-portada" src="imagenes/logo itace.jpg" alt="Logo del ITACE">
+
+        <span class="etiqueta">✦ EDUCACIÓN · TECNOLOGÍA · FUTURO ✦</span>
+
+        <h1>ITACE</h1>
+        <h2>Instituto Tamaulipeco de Capacitación para el Empleo</h2>
+
+        <p>
+            Bienvenidos a nuestra página del ITACE, un espacio para conocer
+            las carreras, instalaciones, actividades y oportunidades que
+            forman parte de la vida estudiantil.
+        </p>
+
+        <button class="boton" id="entrar" type="button">
+            ✨ Entrar a la página
+        </button>
+
+        <p class="aviso-portada">Proyecto escolar · ITACE Reynosa</p>
+    </div>
+</div>
+
+<!-- CONTENIDO PRINCIPAL -->
+<div id="contenido-principal" hidden>
+    <!-- REPRODUCTOR DE MÚSICA ITACE -->
+    <div class="reproductor-itace" id="reproductor-itace">
+        <button type="button" class="boton-musica" id="boton-musica"
+            aria-label="Abrir reproductor de música" aria-expanded="false">🎵</button>
+
+        <div class="panel-musica" id="panel-musica" hidden>
+            <div class="encabezado-musica">
+                <div>
+                    <span>ITACE DIGITAL 4.0</span>
+                    <h3>♪ Música institucional</h3>
+                </div>
+                <button type="button" id="cerrar-musica" aria-label="Cerrar reproductor">×</button>
+            </div>
+
+            <p class="nombre-cancion" id="nombre-cancion">Tamaulipas</p>
+            <audio id="audio-itace" preload="metadata"></audio>
+
+            <div class="controles-musica">
+                <button type="button" id="anterior-musica" aria-label="Canción anterior">⏮</button>
+                <button type="button" id="reproducir-musica" aria-label="Reproducir o pausar">▶</button>
+                <button type="button" id="siguiente-musica" aria-label="Canción siguiente">⏭</button>
+            </div>
+
+            <p class="estado-musica" id="estado-musica">Selecciona reproducir para escuchar.</p>
+        </div>
+    </div>
+
+
+    <header class="encabezado" id="inicio">
+        <p class="sobrelinea">Instituto Tamaulipeco de Capacitación para el Empleo</p>
+
+        <!-- PERFIL ITACE AGREGADO -->
+        <div class="perfil-itace">
+            <img src="imagenes/logo itace.jpg" alt="Logotipo del ITACE">
+            <div>
+                <h2>ITACE</h2>
+                <p>Formación para el futuro</p>
+            </div>
+        </div>
+
+        <h1>✦ ITACE ✦</h1>
+        <p>Formación, conocimiento y oportunidades para el futuro.</p>
+        <p class="aviso">Proyecto académico de Desarrollo Web · Grupo 502 B</p>
+    </header>
+
+    <!-- MENÚ FLOTANTE DESPLEGABLE ITACE -->
+    <div class="menu-flotante">
+        <details class="menu-desplegable">
+            <summary aria-label="Abrir menú de navegación">☰</summary>
+            <nav class="menu-enlaces" aria-label="Menú principal">
+                <a href="#inicio">Inicio</a>
+                <a href="#oportunidad">Tu futuro</a>
+                <a href="#nosotros">Conoce al ITACE</a>
+                <a href="#historia">Historia</a>
+                <a href="#planteles">Planteles</a>
+                <a href="#carreras">Carreras</a>
+                <a href="#instalaciones">Instalaciones</a>
+                <a href="#clubs">Clubes</a>
+                <a href="#actividades-estudiantiles">Actividades estudiantiles</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#noticias">Noticias</a>
+                <a href="#eventos">Eventos</a>
+                <a href="#admisiones">Admisiones</a>
+                <a href="#docentes">Directorio docente</a>
+                <a href="#identidad">Identidad ITACE</a>
+                <a href="#galeria">Galería y videos</a>
+                <a href="#preguntas">Preguntas frecuentes</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </details>
+    </div>
+
+    <main id="contenido">
+
+        <!-- MENSAJE CON IMAGEN DE FONDO -->
+        <section id="oportunidad" class="hero-oportunidad">
+            <div class="hero-oportunidad-contenido">
+                <span class="etiqueta">✦ ITACE · REYNOSA ✦</span>
+                <h2>Tu futuro comienza con una oportunidad</h2>
+                <p>
+                    Educación, tecnología y formación para desarrollar tus
+                    habilidades y construir nuevas oportunidades para tu futuro.
+                </p>
+                <a class="boton" href="#carreras">Conoce nuestras carreras</a>
+            </div>
+        </section>
+
+        <!-- LOGOTIPOS INSTITUCIONALES -->
+        <div class="logos" aria-label="Logotipos institucionales">
+            <img src="imagenes/logo itace.jpg" alt="Logotipo del ITACE">
+            <img src="imagenes/logo tamaulipas.jpg" alt="Logotipo de Tamaulipas">
+        </div>
+
+        <!-- BIENVENIDA -->
+        <section id="nosotros" class="seccion">
+            <div class="bienvenida">
+                <div>
+                    <p class="sobrelinea guinda">Conoce nuestra comunidad</p>
+
+                    <h2>¡Bienvenidos al ITACE!</h2>
+
+                    <p>
+                        El ITACE es una institución relacionada con la formación
+                        y capacitación para el trabajo. En esta página podrás
+                        conocer las carreras, los espacios escolares, los clubes
+                        y algunas de las actividades que forman parte de la
+                        experiencia estudiantil.
+                    </p>
+
+                    <p>
+                        El plantel cuenta con espacios para estudiar, convivir,
+                        participar en actividades culturales y desarrollar
+                        habilidades técnicas y creativas.
+                    </p>
+
+                    <blockquote>
+                        ✦ Aprender, crecer y prepararse para el futuro. ✦
+                    </blockquote>
+                </div>
+
+                <figure class="imagen-destacada">
+                    <img
+                        src="imagenes/entrada.jpg"
+                        alt="Entrada del plantel ITACE"
+                        loading="lazy">
+                    <figcaption>Bienvenidos al ITACE</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- HISTORIA Y TRAYECTORIA -->
+        <section id="historia" class="seccion panel-oscuro">
+            <h2 class="titulo-seccion">Historia y trayectoria</h2>
+            <div class="linea"></div>
+
+            <p>
+                • 1928: Sus raíces se remontan a la inauguración de la Escuela
+                de Artes y Oficios “Industrial” (más tarde nombrada General
+                Álvaro Obregón) en Ciudad Victoria, que funcionó como
+                internado para varones.
+                <br>
+                • 1984: El ITACE fue oficialmente fundado en Ciudad Victoria
+                el 1 de septiembre de 1984, durante el mandato del gobernador
+                Emilio Martínez Manautou, bajo la dirección del profesor
+                Arturo Lerma Anaya. Nació integrando la formación académica
+                con disciplina militarizada y valores cívicos.
+                <br>
+                • 1991–1993: Con el apoyo del gobernador Américo Villarreal
+                Guerra y convenios con la SEP, la institución se expandió a
+                las unidades de Altamira, Reynosa (1991) y Matamoros
+                (incorporada en 1993).
+            </p>
+
+            <!-- MISIÓN Y VISIÓN -->
+            <div class="tarjetas dos">
+                <article class="tarjeta">
+                    <h3>🎯 Misión</h3>
+                    <p>
+                       Brindar bachillerato tecnologico y capacitacion laboral para formar personal calificado
+                       que satisfaga al sector productivo e impulse del desarrollo economico.
+                    </p>
+    
+                </article>
+
+                <article class="tarjeta">
+                    <h3>🌟 Visión</h3>
+                    <p>
+                        Consolidarse como la mejor opcion educativa tecnologica para elevar 
+                        la calidad de vida de la poblacion.
+                    </p>
+                  
+                </article>
+            </div>
+
+            <!-- VALORES -->
+            <article class="tarjeta">
+                <h3>💛 Valores</h3>
+                <ul class="lista-etiquetas">
+                    <li>Lealtad</li>
+                    <li>Honor</li>
+                    <li>Trabajo</li>
+                    <li>Disciplina</li>
+                    <li>Trabajo en equipo</li>
+                    <li>Compromiso</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- PLANTELES -->
+        <section id="planteles" class="seccion seccion-dorada">
+            <h2 class="titulo-seccion">Planteles</h2>
+            <div class="linea"></div>
+
+            <p class="subtitulo">
+                Conoce los planteles representados en esta página.
+            </p>
+
+            <div class="tarjetas dos">
+
+                <article class="tarjeta-plantel">
+                    <img src="imagenes/entrada.jpg" alt="Plantel ITACE Reynosa" loading="lazy">
+                    <div>
+                        <h3>Plantel Reynosa</h3>
+                        <p>Reynosa, Tamaulipas.</p>
+                    </div>
+                </article>
+
+                <article class="tarjeta-plantel">
+                    <img src="imagenes/victoria.jpg" alt="Plantel ITACE Ciudad Victoria" loading="lazy">
+                    <div>
+                        <h3>Plantel Ciudad Victoria</h3>
+                        <p>Ciudad Victoria, Tamaulipas.</p>
+                    </div>
+                </article>
+
+                <article class="tarjeta-plantel">
+                    <img src="imagenes/altamira.jpg" alt="Plantel ITACE Altamira" loading="lazy">
+                    <div>
+                        <h3>Plantel Altamira</h3>
+                        <p>Altamira, Tamaulipas.</p>
+                    </div>
+                </article>
+
+                <article class="tarjeta-plantel">
+                    <img src="imagenes/matamoros.jpg" alt="Plantel ITACE Matamoros" loading="lazy">
+                    <div>
+                        <h3>Plantel Matamoros</h3>
+                        <p>Matamoros, Tamaulipas.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CARRERAS -->
+        <section id="carreras" class="seccion">
+            <h2 class="titulo-seccion">Carreras y áreas de formación</h2>
+            <div class="linea"></div>
+            <div class="tabla-contenedor">
+                <table class="tabla-itace">
+                    <thead>
+                        <tr>
+                            <th scope="col">Carrera o área</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Imagen</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Programación</td>
+                            <td>
+                                Desarrollo de páginas web, programas y
+                                aplicaciones informáticas. La información sobre
+                                la última generación prevista para 2027 debe
+                                confirmarse con el plantel.
+                            </td>
+                            <td>
+                                <img class="imagen-tabla" src="imagenes/programacion.jpg"
+                                     alt="Programación" loading="lazy">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Inteligencia artificial</td>
+                            <td>
+                                Desarrollo de sistemas capaces de realizar tareas
+                                mediante aprendizaje automático, análisis de datos
+                                y procesamiento de información.
+                            </td>
+                            <td>
+                                <img class="imagen-tabla" src="imagenes/inteligencia.jpg"
+                                     alt="Inteligencia artificial" loading="lazy">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Ciberseguridad</td>
+                            <td>
+                                Protección de equipos, redes, sistemas y datos
+                                confidenciales frente a amenazas y ataques digitales.
+                            </td>
+                            <td>
+                                <img class="imagen-tabla" src="imagenes/ciberseguridad.jpg"
+                                     alt="Ciberseguridad" loading="lazy">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Mecánica automotriz</td>
+                            <td>
+                                Mantenimiento y reparación de vehículos, desde
+                                motores tradicionales hasta sistemas
+                                electromecánicos modernos.
+                            </td>
+                            <td>
+                                <img class="imagen-tabla" src="imagenes/mantenimientoautomotriz.jpg"
+                                     alt="Mecánica automotriz" loading="lazy">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Diseño gráfico</td>
+                            <td>
+                                Creación de soluciones visuales, composiciones
+                                creativas e ilustraciones para la comunicación
+                                publicitaria y digital.
+                            </td>
+                            <td>
+                                <img class="imagen-tabla" src="imagenes/disenografico.jpg"
+                                     alt="Diseño gráfico" loading="lazy">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Logística</td>
+                            <td>
+                                Planificación, organización y control de la cadena
+                                de suministro, almacenamiento y transporte
+                                de mercancías.
+                            </td>
+                            <td>
+                                <img class="imagen-tabla" src="imagenes/logistica.jpg"
+                                     alt="Logística" loading="lazy">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Semiconductores</td>
+                            <td>
+                                Estudio y fabricación de componentes electrónicos
+                                avanzados que hacen funcionar la tecnología moderna.
+                            </td>
+                            <td>
+                                <img class="imagen-tabla" src="imagenes/semiconductor.jpg"
+                                     alt="Semiconductores" loading="lazy">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Microelectrónica</td>
+                            <td>
+                                Análisis y diseño de circuitos integrados y
+                                componentes microscópicos para sistemas electrónicos
+                                de alta precisión.
+                            </td>
+                            <td>
+                                <img class="imagen-tabla" src="imagenes/microelectronica.jpg"
+                                     alt="Microelectrónica" loading="lazy">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Mantenimiento industrial</td>
+                            <td>
+                                Gestión y ejecución de planes de mantenimiento
+                                preventivo y correctivo en maquinaria, equipos
+                                e instalaciones industriales.
+                            </td>
+                            <td>
+                                <img class="imagen-tabla" src="imagenes/mantenimientoindustrial.jpg"
+                                     alt="Mantenimiento industrial" loading="lazy">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+  <!-- INSTALACIONES -->
+        <section id="instalaciones" class="seccion">
+            <h2 class="titulo-seccion">Instalaciones del ITACE</h2>
+            <div class="linea"></div>
+
+            <p class="subtitulo">
+                Algunos de los espacios que forman parte de la vida diaria
+                dentro del plantel.
+            </p>
+
+            <div class="tarjetas dos galeria-simple">
+
+                <figure class="tarjeta foto">
+                    <img src="imagenes/auditorio.jpg" alt="Auditorio del plantel" loading="lazy">
+                    <figcaption>
+                        <h3>Auditorio</h3>
+                        <p>
+                            Es un espacio para actividades, reuniones y
+                            eventos escolares.
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="tarjeta foto">
+                    <img src="imagenes/foro.jpg" alt="Foro del plantel" loading="lazy">
+                    <figcaption>
+                        <h3>Foro</h3>
+                        <p>
+                            En este espacio se realizan actividades cívicas
+                            y ceremonias de la comunidad escolar, como los
+                            honores a la bandera.
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="tarjeta foto">
+                    <img src="imagenes/cancha.jpg" alt="Cancha del plantel" loading="lazy">
+                    <figcaption>
+                        <h3>Cancha</h3>
+                        <p>
+                            Es un espacio que los estudiantes pueden utilizar
+                            durante el receso para convivir y realizar
+                            actividades recreativas.
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="tarjeta foto">
+                    <img src="imagenes/muros.jpg" alt="Muros decorados por generaciones anteriores" loading="lazy">
+                    <figcaption>
+                        <h3>Muros decorados</h3>
+                        <p>
+                            Los muros cuentan con decoraciones realizadas
+                            por generaciones anteriores, que aportan color
+                            y creatividad al plantel.
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="tarjeta foto">
+                    <img src="imagenes/comedor.jpg" alt="Comedor del plantel" loading="lazy">
+                    <figcaption>
+                        <h3>Comedor</h3>
+                        <p>
+                            Es el espacio donde los estudiantes pueden
+                            elegir sus alimentos y sentarse a comer
+                            durante su jornada escolar.
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="tarjeta foto">
+                    <img src="imagenes/casetadevigilancia.jpg" alt="Caseta de vigilancia" loading="lazy">
+                    <figcaption>
+                        <h3>Caseta de vigilancia</h3>
+                        <p>
+                            En esta zona, el personal de vigilancia supervisa
+                            la entrada y salida de las personas para contribuir
+                            al control y la seguridad del plantel.
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="tarjeta foto">
+                    <img src="imagenes/pasillosdebancas.jpg" alt="Pasillo con bancas" loading="lazy">
+                    <figcaption>
+                        <h3>Pasillo con bancas</h3>
+                        <p>
+                            Es un área con bancas ubicada en la zona del comedor.
+                            Los estudiantes pueden sentarse al aire libre,
+                            comer y convivir durante sus descansos.
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="tarjeta foto">
+                    <img src="imagenes/plazadelestudiante.jpg" alt="Plaza del estudiante" loading="lazy">
+                    <figcaption>
+                        <h3>Plaza del estudiante</h3>
+                        <p>
+                            Área de encuentro y convivencia para la comunidad
+                            estudiantil, donde se pueden compartir momentos
+                            y realizar actividades escolares.
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="tarjeta foto">
+                    <img src="imagenes/explanada.jpg" alt="Explanada del plantel" loading="lazy">
+                    <figcaption>
+                        <h3>Explanada</h3>
+                        <p>
+                            Es un espacio utilizado para los honores a la
+                            bandera de los lunes y para la convivencia durante
+                            el receso. Las zonas con sombra permiten descansar
+                            y reunirse con los compañeros.
+                        </p>
+                    </figcaption>
+                </figure>
+
+            </div>
+        </section>
+
+        <!-- CLUBES Y ACTIVIDADES -->
+        <section id="clubs" class="seccion seccion-verde">
+            <h2 class="titulo-seccion">Clubes</h2>
+            <div class="linea"></div>
+
+            <p class="subtitulo">
+                Los clubes permiten desarrollar habilidades, descubrir
+                talentos y participar en actividades culturales, artísticas
+                y cívicas.
+            </p>
+
+            <div class="tarjetas tres">
+
+                <article class="tarjeta">
+                    <img src="imagenes/clubdanza.jpg" alt="Club de danza" loading="lazy">
+                    <h3>Danza</h3>
+                    <p>
+                        Actividad artística que permite expresarse por medio
+                        del movimiento, la música y las coreografías.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="imagenes/clubbandadeguerra.jpg" alt="Banda de guerra" loading="lazy">
+                    <h3>Banda de guerra</h3>
+                    <p>
+                        Actividad que fomenta la disciplina, la coordinación
+                        y la participación en ceremonias cívicas.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="imagenes/clubescolta.jpg" alt="Escolta escolar" loading="lazy">
+                    <h3>Escolta</h3>
+                    <p>
+                        Participación en ceremonias cívicas que promueve
+                        el respeto, la responsabilidad y el trabajo en equipo.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="imagenes/clubrondalla.jpg" alt="Club de rondalla" loading="lazy">
+                    <h3>Rondalla</h3>
+                    <p>
+                        Actividad musical para desarrollar habilidades
+                        artísticas y compartir el gusto por la música.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="imagenes/clubajedrez.jpg" alt="Club de ajedrez" loading="lazy">
+                    <h3>Ajedrez</h3>
+                    <p>
+                        Actividad que ayuda a practicar la concentración,
+                        la estrategia y el pensamiento lógico.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="imagenes/clubdibujo.jpg" alt="Club de dibujo" loading="lazy">
+                    <h3>Dibujo</h3>
+                    <p>
+                        Espacio para expresar ideas mediante ilustraciones,
+                        creatividad y diferentes técnicas de dibujo.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="imagenes/clubpremilitar.jpg" alt="Actividad premilitar" loading="lazy">
+                    <h3>Premilitar</h3>
+                    <p>
+                        Actividad relacionada con la disciplina, la coordinación,
+                        el respeto y el trabajo en equipo.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="imagenes/cluboratoria.jpg" alt="Actividad de oratoria" loading="lazy">
+                    <h3>Oratoria</h3>
+                    <p>
+                        Actividad que ayuda a mejorar la expresión oral,
+                        la seguridad al hablar y la capacidad de comunicar
+                        ideas frente a otras personas.
+                    </p>
+                </article>
+                <article class="tarjeta">
+                    <img src="imagenes/clubrobotica.jpg" alt="Actividad de oratoria" loading="lazy">
+                    <h3>Robotica</h3>
+                    <p>
+                        Actividad que ayuda a mejorar a mejorar la creatividad y ver que si lo piensas lo puedes crear.
+                    </p>
+                </article>
+            </div>
+        </section>
+        <!-- ACTIVIDADES ESTUDIANTILES -->
+<section id="actividades-estudiantiles" class="seccion seccion-dorada">
+
+    <h2 class="titulo-seccion">Actividades estudiantiles</h2>
+    <div class="linea"></div>
+
+    <p class="subtitulo">
+        Conoce algunas de las actividades en las que pueden participar
+        los estudiantes para desarrollar sus habilidades, convivir
+        y formar parte de la vida escolar.
+    </p>
+
+    <div class="tarjetas tres">
+
+        <!-- ACTIVIDAD 1 -->
+        <article class="tarjeta">
+            <img
+                src="imagenes/estudiantilcarrera.jpg"
+                alt="Actividad cultural estudiantil"
+                loading="lazy">
+
+            <h3>Actividades culturales</h3>
+
+            <p>
+                Se hizo una carrera en el parque cultural en la cual participaron alumnos en una carrera para el festejo de 42 aniversario.
+            </p>
+        </article>
+
+
+        <!-- ACTIVIDAD 2 -->
+        <article class="tarjeta">
+            <img
+                src="imagenes/estudiantiljuegos.jpg"
+                alt="Actividad deportiva estudiantil"
+                loading="lazy">
+
+            <h3>Actividades deportivas</h3>
+
+            <p>
+                Actividades que fomentan la convivencia, el trabajo en equipo,
+                la disciplina y la práctica de diferentes deportes, promoviendo al igual el aprendizaje, con juegos tradicionales.
+                el dia 11 de septiembre.
+            </p>
+        </article>
+
+
+        <!-- ACTIVIDAD 3 -->
+        <article class="tarjeta">
+            <img
+                src="imagenes/estudiantilsaltos.jpg"
+                alt="Actividad académica estudiantil"
+                loading="lazy">
+
+            <h3>Actividades académicas</h3>
+
+            <p>
+                Participación en un ambiente de estusiasmo,convivencia y espiritu deportivo.
+            el dia 5 de septiembre del 2026
+            </p>
+        </article>
+    
+    </div>
+
+</section>
+
+        <!-- PROYECTOS -->
+        <section id="proyectos" class="seccion">
+            <h2 class="titulo-seccion">Proyectos estudiantiles</h2>
+            <div class="linea"></div>
+
+            <p>
+                En este espacio se pueden mostrar trabajos y proyectos
+                realizados por estudiantes, como páginas web, diseños,
+                actividades tecnológicas y propuestas creativas.
+            </p>
+
+            <div class="tarjetas tres">
+                <article class="tarjeta">
+                    <img src="imagenes/proyectodonacion.jpg" alt="Proyecto de programación" loading="lazy">
+                    <h3>Arte</h3>
+                    <p>
+                       EL dia 23 de septimbre se llevo acabo el 3er Concurso Artistico de Infografias, sobre Donacion de Organos y Tejidos, con la participacion de alumnos de 3er y 5to semestre
+                       quines dejaron su creatividad y atraves de ella promovieron mensajes de empatia, solidaridad y esperanza.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="imagenes/proyectosciencia.jpg" alt="Proyecto de robótica" loading="lazy">
+                    <h3>Ciencia</h3>
+                    <p>
+                        El dia 8 de octubre 2026, el itace participo en la feria infantil de ciencia,tecnologia y arte 2026,llevando a sus alumnos a participar con su creatividad.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="imagenes/proyectosagua.jpg" alt="Proyecto del agua" loading="lazy">
+                    <h3>Diseño</h3>
+                    <p>
+                        El dia 23 de septiembre del 2026, estudiantes mostraron su creatividad mediante dibujos,sobre el cuidado y uso responsable del agua.
+                </article>
+            </div>
+        </section>
+
+        <!-- NOTICIAS -->
+        <section id="noticias" class="seccion seccion-dorada">
+            <h2 class="titulo-seccion">Noticias y actividades</h2>
+            <div class="linea"></div>
+
+            <div class="tarjetas dos">
+                <article class="tarjeta noticia">
+                    <img src="imagenes/noticiabecas.jpg"
+                     alt="becas" loading="lazy">
+                    <div>
+                        <h3>Becas</h3>
+                        <p>
+                            EL dia 21 de septiembre del 2026, se llevo acabo una junta para las Becas, dirigida a estudiantes del primer semestre.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="tarjeta noticia">
+                    <img src="imagenes/noticiateleton.jpg" alt="teleton" loading="lazy">
+                    <div>
+                        <h3>Teleton</h3>
+                        <p>
+                            El dia 12 de octubre del 2026 la Directora General del ITACE, Dra.Claudia Anaya Alvarado, reconocio el esfuerzo del plantel de Reynosa por 
+                            ser el 1er lugar, en la ayuda al teleton, asi juntando entre los cuatro planteles $82,783,40.
+                        </p>
+                    </div>
+                </article>
+                
+                <article class="tarjeta noticia">
+                    <img src="imagenes/noticiacarcel.jpg" alt="noticia" loading="lazy">
+                    <div>
+                        <h3>CEDES </h3>
+                        <p>
+                            El dia 13 de octubre del 2026, la Directora General,Dra.Claudia Anaya Alvarado, presidio la ceremonia de entrega de certificados de ITACE-ICAT, a mas de 80 personas
+                            en el Centro de Ejecucion de Sanciones (CEDES).
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- EVENTOS -->
+        <section id="eventos" class="seccion">
+            <h2 class="titulo-seccion">Eventos y conferencias</h2>
+            <div class="linea"></div>
+
+            <div class="tarjetas tres">
+                <article class="tarjeta">
+            
+                    <h3>Cambio climatico</h3>
+                    <img src="imagenes/eventocambioclimatico.jpg"
+                 alt="Conferencia escolar"
+                 loading="lazy">
+
+                    <p>
+                        Conferencia donde alumos partiparon con el apoyo de la Profa Silva Rodriguez,Enrique,Lic.Angelica Balboa Guillen, Olivia Martinez Avila y Alvaro F.Garza Fuentes.
+                        El dia 7 de septiembre del 2026.
+                    </p>
+
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Lectura</h3>
+                    <img src="imagenes/eventoslectura.jpg"
+                 alt="Conferencia escolar"
+                 loading="lazy">
+
+                    <p>
+                        Lecturas con el fin de preserver nuestra identidad coltural, se llevo acabo con la participacion de C.P.Martha Gabriela Reyes Anaya y la Mtra.Sandra Silva Camacho 
+                        el dia 23 de octubre del 2026.
+                    </p>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Feria infantil</h3>
+                    <img src="imagenes/eventospolitecnico.jpg"
+                 alt="Conferencia escolar"
+                 loading="lazy">
+
+                    <p>
+                        inauguración de la feria infantil de ciencia,tecnologia y cultura, en la que participaron alumnos del itace,
+                        el dia 8 de octubre del 2026
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ADMISIONES Y REDES SOCIALES -->
+        <section id="admisiones" class="seccion panel-oscuro">
+            <h2 class="titulo-seccion">Admisiones</h2>
+            <div class="linea"></div>
+
+            <p>
+                Las personas interesadas en estudiar en el ITACE pueden
+                consultar con el plantel la oferta educativa, los requisitos
+                y las fechas de inscripción correspondientes.
+            </p>
+
+            <div class="tarjetas dos">
+                <article class="tarjeta">
+                    <h3>Oferta educativa</h3>
+                    <p>
+                        Conoce las áreas de formación y pregunta cuáles están
+                        disponibles en el plantel de tu interés.
+                    </p>
+                    <a class="boton-secundario" href="#carreras">Ver carreras</a>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Información de ingreso</h3>
+                    <p>
+                        Consulta directamente con la institución los documentos,
+                        fechas y procedimientos de admisión.
+                    </p>
+                    <details class="mas-informacion">
+                        <summary>Más información</summary>
+                        <p>
+                        Certificado de secundaria, acta de nacimiento,curp sctuslizada,carta de buena conducta,comprobante de domicilio actualizada y comprobante de inscripción.
+                        </p>
+                    </details>
+                </article>
+            </div>
+
+            <!-- REDES SOCIALES -->
+            <div class="redes-admisiones">
+                <h3>📱 Encuéntranos en redes sociales</h3>
+                <p>
+                    Consulta las redes sociales y los resultados de búsqueda
+                    para localizar los canales correspondientes al ITACE
+                    Reynosa y revisar sus avisos de admisión.
+                </p>
+
+                <div class="tarjetas tres">
+                    <article class="tarjeta">
+                        <h3>Facebook</h3>
+                        <p>
+                            Encuéntranos en Facebook para consultar publicaciones,
+                            avisos y novedades.
+                        </p>
+                        <!-- CAMBIA SOLO EL HREF POR EL LINK DE FACEBOOK -->
+                        <a
+                            class="boton-secundario boton-red-social"
+                            href="https://www.facebook.com/share/1avXQ5XbEo/?mibextid=wwXIfr"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Facebook
+                        </a>
+                    </article>
+
+                    <article class="tarjeta">
+                        <h3>WhatsApp</h3>
+                        <p>
+                            Consulta el canal de WhatsApp para información y
+                            comunicación con la institución.
+                        </p>
+                        
+<a href="https://wa.me/528999252403"
+   class="boton-secundario"
+   target="_blank"
+   rel="noopener noreferrer">
+    💚 WhatsApp
+</a>
+                    </article>
+
+                    <article class="tarjeta">
+                        <h3>TikTok</h3>
+                        <p>
+                            Visita TikTok para conocer contenido y actividades
+                            relacionadas con el ITACE.
+                        </p>
+    
+                        <a
+                            class="boton-secundario boton-red-social"
+                            href="https://www.tiktok.com/@itacetamaulipas?_r=1&_t=ZS-9ApmvzaJtOD"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            TikTok
+                        </a>
+                    </article>
+        </section>
+
+        <!-- DIRECTORIO DOCENTE -->
+        <section id="docentes" class="seccion directorio">
+            <h2 class="titulo-seccion">Directorio docente</h2>
+            <div class="linea"></div>
+
+            <p class="subtitulo">
+                Encuentra al personal docente por módulos, clubes o materias
+                académicas. La información se organiza en un archivo JSON
+                y JavaScript genera las tarjetas del directorio.
+            </p>
+
+            <div class="categorias-docentes">
+                <button
+                    class="boton-categoria activo"
+                    type="button"
+                    data-categoria-docente="modulos"
+                    aria-pressed="true">
+                    <span>▦</span>
+                    <strong>Módulos</strong>
+                    <small>Docentes por módulo</small>
+                </button>
+
+                <button
+                    class="boton-categoria"
+                    type="button"
+                    data-categoria-docente="clubes"
+                    aria-pressed="false">
+                    <span>✦</span>
+                    <strong>Clubes</strong>
+                    <small>Actividades y talleres</small>
+                </button>
+<button
+    class="boton-categoria activo"
+    type="button"
+    data-categoria-docente="materias"
+    aria-pressed="true">
+    <span>▤</span>
+    <strong>Materias académicas</strong>
+    <small>Asignaturas por área</small>
+</button>
+            </div>
+
+            <div class="directorio-cabecera">
+                <h3 id="titulo-categoria-docente">Docentes de módulos</h3>
+                <p>Busca por nombre, academia, materia o actividad.</p>
+            </div>
+
+            <div class="buscador">
+                <label for="buscar-docente">Nombre del docente</label>
+                <input
+                    id="buscar-docente"
+                    type="search"
+                    placeholder="Escribe un nombre o apellido"
+                    autocomplete="off">
+
+                <label for="buscar-materia">Materia, módulo o club</label>
+                <input
+                    id="buscar-materia"
+                    type="search"
+                    placeholder="Ej. Programación"
+                    autocomplete="off">
+
+                <button
+                    class="boton-secundario"
+                    id="limpiar-busqueda"
+                    type="button">
+                    Limpiar búsqueda
+                </button>
+            </div>
+
+            <p id="resultado-busqueda" role="status" aria-live="polite">
+                Cargando directorio docente...
+            </p>
+
+            <div id="lista-docentes" class="tarjetas tres lista-docentes"></div>
+
+            <p class="nota-directorio">
+                Los nombres, perfiles, materias y fotografías deben corresponder
+                a información autorizada.
+            </p>
+        </section>
+
+        <!-- IDENTIDAD ITACE E HIMNOS -->
+        <section id="identidad" class="seccion panel-oscuro">
+            <h2 class="titulo-seccion">Identidad y orgullo ITACE</h2>
+            <div class="linea"></div>
+
+            <p class="subtitulo">
+                En este apartado se presentan las interpretaciones de los
+                himnos que forman parte de la identidad institucional.
+            </p>
+
+            <div class="tarjetas dos">
+                <article class="tarjeta video-tarjeta">
+                    <h3>Himno del ITACE</h3>
+                    <p>Video de la interpretación del Himno del ITACE.</p>
+
+                    <video controls preload="metadata" aria-label="Video del Himno del ITACE">
+                        <source src="videos/Himno-itace.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+
+                    <p class="creditos-video">
+                        <strong>Créditos:</strong>
+                        Himno creado por Juan Pablo Moreno de la Cruz
+                        intérprete los almunos del grupo 502-B Progrmacion.
+                    </p>
+                    <details class="letra-himno">
+                        <summary>🎵 Ver letra del Himno del ITACE</summary>
+                        <div class="contenido-letra">
+                            <img src="imagenes/letrahimnoitace.jpg"
+                                 alt="Letra del Himno del ITACE"
+                                 loading="lazy">
+                        </div>
+                    </details>
+                </article>
+
+                <article class="tarjeta video-tarjeta">
+                    <h3>Himno a Tamaulipas</h3>
+                    <p>Video de la interpretación del Himno a Tamaulipas.</p>
+
+                    <video controls preload="metadata" aria-label="Video del Himno a Tamaulipas">
+                        <source src="videos/himno-tamaulipas.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+
+                    <p class="creditos-video">
+                        <strong>Créditos:</strong>
+                        Rafael Antonio Perez Perez (compositor) y Alfredo Tamayo Marin (musical)
+                    intérprete los almunos del grupo 502-B Progrmacion
+                    </p>
+                    <details class="letra-himno">
+                        <summary>🎵 Ver letra del Himno a Tamaulipas</summary>
+                        <div class="contenido-letra">
+                            <img src="imagenes/letrahimnotamaulipas.jpg"
+                                 alt="Letra del Himno a Tamaulipas"
+                                 loading="lazy">
+                        </div>
+                    </details>
+                </article>
+            </div>
+
+        </section>
+
+        <!-- GALERÍA -->
+        <section id="galeria" class="seccion">
+            <h2 class="titulo-seccion">Galería multimedia</h2>
+            <div class="linea"></div>
+
+            <p class="subtitulo">
+                Fotografías de las instalaciones y de las actividades estudiantiles.
+            </p>
+
+            <div class="galeria-grid">
+
+                <figure class="elemento-galeria" data-categoria="instalaciones">
+                    <button type="button" data-imagen="entrada.jpg" data-descripcion="Entrada del ITACE">
+                        <img src="imagenes/entrada.jpg" alt="Entrada del ITACE" loading="lazy">
+                    </button>
+                    <figcaption>Entrada del plantel</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="instalaciones">
+                    <button type="button" data-imagen="auditorio.jpg" data-descripcion="Auditorio del plantel">
+                        <img src="imagenes/auditorio.jpg" alt="Auditorio" loading="lazy">
+                    </button>
+                    <figcaption>Auditorio</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="instalaciones">
+                    <button type="button" data-imagen="foro.jpg" data-descripcion="Foro escolar">
+                        <img src="imagenes/foro.jpg" alt="Foro" loading="lazy">
+                    </button>
+                    <figcaption>Foro</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="instalaciones">
+                    <button type="button" data-imagen="cancha.jpg" data-descripcion="Cancha escolar">
+                        <img src="imagenes/cancha.jpg" alt="Cancha" loading="lazy">
+                    </button>
+                    <figcaption>Cancha</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="instalaciones">
+                    <button type="button" data-imagen="muros.jpg" data-descripcion="Muros decorados por generaciones anteriores">
+                        <img src="imagenes/muros.jpg" alt="Muros decorados" loading="lazy">
+                    </button>
+                    <figcaption>Muros decorados</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="instalaciones">
+                    <button type="button" data-imagen="comedor.jpg" data-descripcion="Comedor escolar">
+                        <img src="imagenes/comedor.jpg" alt="Comedor" loading="lazy">
+                    </button>
+                    <figcaption>Comedor</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="instalaciones">
+                    <button type="button" data-imagen="casetadevigilancia.jpg" data-descripcion="Caseta de vigilancia">
+                        <img src="imagenes/casetadevigilancia.jpg" alt="Caseta de vigilancia" loading="lazy">
+                    </button>
+                    <figcaption>Caseta de vigilancia</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="instalaciones">
+                    <button type="button" data-imagen="pasillosdebancas.jpg" data-descripcion="Pasillo con bancas">
+                        <img src="imagenes/pasillosdebancas.jpg" alt="Pasillo con bancas" loading="lazy">
+                    </button>
+                    <figcaption>Pasillo con bancas</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="instalaciones">
+                    <button type="button" data-imagen="plazadelestudiante.jpg" data-descripcion="Plaza del estudiante">
+                        <img src="imagenes/plazadelestudiante.jpg" alt="Plaza del estudiante" loading="lazy">
+                    </button>
+                    <figcaption>Plaza del estudiante</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="instalaciones">
+                    <button type="button" data-imagen="explanada.jpg" data-descripcion="Explanada del plantel">
+                        <img src="imagenes/explanada.jpg" alt="Explanada" loading="lazy">
+                    </button>
+                    <figcaption>Explanada</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="actividades">
+                    <button type="button" data-imagen="danza.jpg" data-descripcion="Club de danza">
+                        <img src="imagenes/clubdanza.jpg" alt="Danza" loading="lazy">
+                    </button>
+                    <figcaption>Danza</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="actividades">
+                    <button type="button" data-imagen="banda.jpg" data-descripcion="Banda de guerra">
+                        <img src="imagenes/clubbandadeguerra.jpg" alt="Banda de guerra" loading="lazy">
+                    </button>
+                    <figcaption>Banda de guerra</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="actividades">
+                    <button type="button" data-imagen="escolta.jpg" data-descripcion="Escolta escolar">
+                        <img src="imagenes/clubescolta.jpg" alt="Escolta" loading="lazy">
+                    </button>
+                    <figcaption>Escolta</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="actividades">
+                    <button type="button" data-imagen="rondalla.jpg" data-descripcion="Club de rondalla">
+                        <img src="imagenes/clubrondalla.jpg" alt="Rondalla" loading="lazy">
+                    </button>
+                    <figcaption>Rondalla</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="actividades">
+                    <button type="button" data-imagen="ajedrez.jpg" data-descripcion="Club de ajedrez">
+                        <img src="imagenes/clubajedrez.jpg" alt="Ajedrez" loading="lazy">
+                    </button>
+                    <figcaption>Ajedrez</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="actividades">
+                    <button type="button" data-imagen="dibujo.jpg" data-descripcion="Club de dibujo">
+                        <img src="imagenes/clubdibujo.jpg" alt="Dibujo" loading="lazy">
+                    </button>
+                    <figcaption>Dibujo</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="actividades">
+                    <button type="button" data-imagen="premilitar.jpg" data-descripcion="Actividad premilitar">
+                        <img src="imagenes/clubpremilitar.jpg" alt="Premilitar" loading="lazy">
+                    </button>
+                    <figcaption>Premilitar</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="actividades">
+                    <button type="button" data-imagen="oratoria.jpg" data-descripcion="Actividad de oratoria">
+                        <img src="imagenes/cluboratoria.jpg" alt="Oratoria" loading="lazy">
+                    </button>
+                    <figcaption>Oratoria</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="proyectos">
+                    <button type="button" data-imagen="programacion.jpg" data-descripcion="Área de programación">
+                        <img src="imagenes/programacion.jpg" alt="Programación" loading="lazy">
+                    </button>
+                    <figcaption>Programación</figcaption>
+                </figure>
+
+                <figure class="elemento-galeria" data-categoria="proyectos">
+                    <button type="button" data-imagen="diseno.jpg" data-descripcion="Área de diseño gráfico">
+                        <img src="imagenes/disenografico.jpg".jpg alt="Diseño gráfico" loading="lazy">
+                    </button>
+                    <figcaption>Diseño gráfico</figcaption>
+                </figure>
+
+            </div>
+
+            
+            <div class="videos-grid">
+
+                <article class="tarjeta video-tarjeta">
+                    <h3>Video de la entrada</h3>
+                    <video controls preload="metadata">
+                        <source src="videos/videoentrada.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                </article>
+
+                <article class="tarjeta video-tarjeta">
+                    <h3>Actividades en el foro</h3>
+                    <video controls preload="metadata">
+                        <source src="videos/videoforro.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                </article>
+
+                <article class="tarjeta video-tarjeta">
+                    <h3>Muros del plantel</h3>
+                    <video controls preload="metadata" >
+                        <source src="videos/murosvideo.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                </article>
+
+                <article class="tarjeta video-tarjeta">
+                    <h3>Teletón</h3>
+                    <video controls preload="metadata">
+                        <source src="videos/teleton.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <section id="preguntas" class="seccion seccion-dorada">
+            <h2 class="titulo-seccion">Preguntas frecuentes</h2>
+            <div class="linea"></div>
+
+            <p class="subtitulo">
+                Pulsa sobre una pregunta para mostrar su respuesta.
+            </p>
+
+            <details>
+                <summary>¿Qué carreras puedo conocer en esta página?</summary>
+                <p>
+                    En la sección de carreras aparecen Programación,
+                    Inteligencia Artificial, Ciberseguridad, Mecánica
+                    Automotriz, Diseño Gráfico, Logística, Semiconductores,
+                    Microelectrónica y Mantenimiento Industrial.
+                </p>
+            </details>
+
+            <details>
+                <summary>¿Qué actividades estudiantiles se presentan?</summary>
+                <p>
+                    Se presentan Danza, Banda de guerra, Escolta, Rondalla,
+                    Ajedrez, Dibujo, Premilitar y Oratoria.
+                </p>
+            </details>
+
+            <details>
+                <summary>¿Dónde puedo conocer las instalaciones?</summary>
+                <p>
+                    En el apartado de Instalaciones se muestran el auditorio,
+                    el foro, la cancha, los muros decorados, el comedor,
+                    la caseta de vigilancia, el pasillo con bancas, la plaza
+                    del estudiante y la explanada.
+                </p>
+            </details>
+
+            <details>
+                <summary>¿Cómo puedo conocer los requisitos de admisión?</summary>
+                <p>
+                    Puedes consultar directamente con el plantel los requisitos,
+                    documentos y fechas de inscripción. En el apartado de
+                    Admisiones también encontrarás enlaces para buscar sus
+                    canales de información.
+                </p>
+            </details>
+
+            <details>
+                <summary>¿Dónde puedo consultar el directorio docente?</summary>
+                <p>
+                    En el apartado Directorio docente puedes buscar por nombre,
+                    materia, módulo o club. 
+                </p>
+            </details>
+
+            <details>
+                <summary>¿La página es oficial?</summary>
+                <p>
+                    No. Es un proyecto académico realizado para una actividad
+                    escolar y no sustituye los canales oficiales de la institución.
+                </p>
+            </details>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="seccion panel-oscuro">
+            <h2 class="titulo-seccion">Contacto y créditos</h2>
+            <div class="linea"></div>
+
+            <div class="tarjetas dos">
+                <article class="tarjeta">
+                    <h3>Ubicación</h3>
+                    <p>ITACE Reynosa, Tamaulipas.</p>
+                    <p>
+                        Puedes consultar la ubicación mediante el siguiente enlace.
+                    </p>
+
+                    <a
+                        class="boton-secundario"
+                        href="https://www.google.com/maps/search/ITACE+Reynosa"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver ubicación en mapas
+                    </a>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Créditos del proyecto</h3>
+                    <p><strong>Proyecto:</strong> ITACE DIGITAL 4.0.</p>
+                    <p><strong>Asignatura:</strong> Desarrollo Web.</p>
+                    <p><strong>Grupo:</strong> 502 B.</p>
+                    <p><strong>Año:</strong> 2026.</p>
+                    <p><strong>Nombre:</strong> Karla Joselyn Santos Muñoz</p>
+                </article>
+            </div>
+
+            <p class="aviso-final">Página elaborada con fines académicos.</p>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <p><strong>✦ ITACE DIGITAL 4.0 ✦</strong></p>
+        <p>Propuesta académica de Desarrollo Web · Grupo 502 B</p>
+        <p>© 2026 · Educación, tecnología y futuro.</p>
+    </footer>
+
+</div>
+
+<!-- BOTÓN PARA SUBIR -->
+<button
+    id="arriba"
+    class="boton-arriba"
+    type="button"
+    aria-label="Volver arriba"
+    title="Volver arriba">
+    ↑
+</button>
+
+<!-- VISOR DE IMÁGENES -->
+<div id="visor" class="visor" aria-hidden="true">
+    <button
+        id="cerrar-visor"
+        class="cerrar-visor"
+        type="button"
+        aria-label="Cerrar imagen">
+        ×
+    </button>
+
+    <img id="imagen-ampliada" src="" alt="">
+    <p id="descripcion-imagen"></p>
+</div>
+
+</body>
+</html>

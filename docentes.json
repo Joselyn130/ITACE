@@ -173,7 +173,7 @@
             "3.º",
             "5.º"
         ],
-        "foto": "imagenes/benjamin.jpg",
+        "foto": "imagenes/limon.jpg",
         "perfil": "Docente del área de Informática. Imparte Programación, Inteligencia Artificial y Cultura Digital. Cuenta con formación en Administración en Productividad y Calidad y Maestría en Educación. Tiene 5 años en el ITACE.",
         "correo": ""
     },
@@ -276,7 +276,7 @@
             "Temas Selectos de Matemáticas 2"
         ],
         "semestres": [],
-        "foto": "imagenes/yuridia.jpg",
+        "foto": "imagenes/mujer.jpg",
         "perfil": "Ingeniera Industrial y Licenciada en Matemáticas. Cuenta con Maestría en Educación e Innovación Educativa y actualmente estudia un Doctorado en Educación.",
         "correo": ""
     },
@@ -298,26 +298,10 @@
             "1.º",
             "3.º"
         ],
-        "foto": "imagenes/romualdo.jpg",
+        "foto": "imagenes/hombre.jpg",
         "perfil": "Docente con formación en Mantenimiento Industrial y Mantenimiento en Instalaciones Petroleras.",
         "correo": ""
     },
-
-    {
-        "nombre": "Nohemí Quintanilla Arcos",
-        "academia": [
-            "Docente"
-        ],
-        "tipo": "materias",
-        "modulos": [],
-        "clubes": [],
-        "materiasAcademicas": [],
-        "semestres": [],
-        "foto": "imagenes/nohemi.jpg",
-        "perfil": "Información profesional pendiente de completar.",
-        "correo": ""
-    },
-
     {
         "nombre": "Rafael Villasana",
         "academia": [
@@ -362,7 +346,7 @@
             "3.º",
             "5.º"
         ],
-        "foto": "imagenes/diana.jpg",
+        "foto": "imagenes/mujer.jpg",
         "perfil": "Licenciada en Administración por el Instituto Tecnológico de Reynosa. Participa en el área de Oratoria.",
         "correo": ""
     },
@@ -383,7 +367,7 @@
         "semestres": [
             "3.º"
         ],
-        "foto": "imagenes/jose-luis.jpg",
+        "foto": "imagenes/hombre.jpg",
         "perfil": "Docente relacionado con el módulo de Semiconductores.",
         "correo": ""
     },
@@ -404,7 +388,7 @@
             "3.º",
             "5.º"
         ],
-        "foto": "imagenes/javier.jpg",
+        "foto": "imagenes/hombre.jpg",
         "perfil": "Ingeniero Electromecánico con Maestría en Ingeniería Industrial y Manufactura Avanzada. Imparte el módulo de Mantenimiento Automotriz.",
         "correo": ""
     },
@@ -427,7 +411,7 @@
             "3.º",
             "5.º"
         ],
-        "foto": "imagenes/mario.jpg",
+        "foto": "imagenes/santoyo.jpg",
         "perfil": "Docente con formación como Ingeniero Industrial, Maestría en Educación y carrera técnica en Refrigeración y Climatización.",
         "correo": ""
     },
@@ -540,7 +524,7 @@
     },
 
     {
-        "nombre": "Carla Valeria Moran Lerma",
+        "nombre": "Karla Valeria Moran Lerma",
         "academia": [
             "Pensamiento Filosófico",
             "Ciencias Sociales",
@@ -558,7 +542,7 @@
             "1.º",
             "3.º"
         ],
-        "foto": "imagenes/carla.jpg",
+        "foto": "imagenes/karlavaleria.jpg",
         "perfil": "Docente del área de Pensamiento Filosófico, Ciencias Sociales y Cultura Digital. Cuenta con Maestría y tiene 33 años en el ITACE.",
         "correo": ""
     },
@@ -606,7 +590,7 @@
             "3.º",
             "5.º"
         ],
-        "foto": "imagenes/norma.jpg",
+        "foto": "imagenes/mujer.jpg",
         "perfil": "Docente de Ciencias Naturales. Cuenta con formación en Ingeniería Química y Maestría en Docencia. Tiene 26 años en el ITACE.",
         "correo": ""
     },
@@ -639,15 +623,70 @@
         "academia": [
             "Prefectura"
         ],
-        "tipo": "modulos",
+        "tipo": "",
         "modulos": [],
         "clubes": [],
-        "materiasAcademicas": [],
+        "materiasAcademicas": ["prefecto"],
         "semestres": [
             "3.º"
         ],
-        "foto": "imagenes/omar.jpg",
+        "foto": "imagenes/omarprefecto.jpg",
         "perfil": "Prefecto y responsable de tercer semestre. Tiene 32 años en el ITACE.",
+        "correo": ""
+    },
+       {
+        "nombre": "Aaron Espinoza Gallegos",
+        "academia": [
+            "Licenciado en Ciencias de la Educacion"
+        ],
+        "tipo": "",
+        "modulos": [],
+        "clubes": ["Club de Banda de Guerra"],
+        "materiasAcademicas": ["prefecto"],
+        "semestres": [
+            "5.º"
+        ],
+        "foto": "imagenes/aronprefecto.jpg",
+        "perfil": "Encargado de mantener la disiplina dentro de la prepa.",
+        "correo": ""
+    },
+    {
+        "nombre": "Trinidad Hernandez Barrera",
+        "academia": [
+            "Ciencias Naturales, Experimentales y Tecnología"
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            " Electrónica, Semiconductores y Microelectrónica, Lengua y Comunicación, Conciencia Histórica"
+        ],
+        "semestres": [
+            "3.º",
+            "5.º"
+        ],
+        "foto": "imagenes/trinidad.jpg",
+        "perfil": "Cuenta con una Ingeniería y Licenciatura en Electrónica. Lleva trabajando 10 años en el ITACE.",
+        "correo": ""
+    }, 
+       {
+        "nombre": "Samuel Gonzales de la Fuente",
+        "academia": [
+            "Cuenta con una Licenciatura en Administración de Empresas y una Carrera Técnica en Ebanistería."
+        ],
+        "tipo": "materias",
+        "modulos": [],
+        "clubes": [],
+        "materiasAcademicas": [
+            " Pensamiento Filosófico, Ciencias Sociales I, Estudios Literarios."
+        ],
+        "semestres": [
+            "1.º ",
+            "3.º ",
+            "5.º"
+        ],
+        "foto": "imagenes/samuel.jpg",
+        "perfil": "Profesor que lleva tiempo trabajando en el ITACE.",
         "correo": ""
     }
 ]

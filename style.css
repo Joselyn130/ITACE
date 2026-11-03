@@ -1,6 +1,5 @@
 /* =========================================
    ITACE DIGITAL 4.0
-   Diseño general de la página
    ========================================= */
 
 :root {
@@ -140,8 +139,10 @@ summary:focus-visible {
 }
 
 .logo-portada {
-    width: 135px;
-    height: 135px;
+    display: block;
+    width: 145px;
+    height: 145px;
+    max-width: 45vw;
     object-fit: contain;
     margin: 0 auto 20px;
     border-radius: 50%;
@@ -320,6 +321,7 @@ summary:focus-visible {
 }
 
 .encabezado .aviso {
+
     font-size: 0.88rem;
     color: var(--dorado-claro);
 }
@@ -982,6 +984,62 @@ main {
     color: var(--texto);
 }
 
+
+/* LETRAS DE LOS HIMNOS: apartado desplegable debajo de los créditos */
+.letra-himno {
+    margin-top: 16px;
+    border: 1px solid var(--dorado);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fffaf0;
+}
+
+.letra-himno summary {
+    padding: 13px 16px;
+    color: var(--guinda);
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+    transition: background var(--transicion), color var(--transicion);
+}
+
+.letra-himno summary::-webkit-details-marker {
+    display: none;
+}
+
+.letra-himno summary::after {
+    content: "+";
+    float: right;
+    color: var(--guinda);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.letra-himno[open] summary::after {
+    content: "−";
+}
+
+.letra-himno summary:hover {
+    background: #f7e7a5;
+}
+
+.contenido-letra {
+    padding: 14px;
+    border-top: 1px solid #ead7a0;
+    text-align: center;
+}
+
+.contenido-letra img {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: 0 auto;
+    border: 2px solid var(--dorado);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
 /* =========================================
    GALERÍA MULTIMEDIA
    ========================================= */
@@ -1270,8 +1328,9 @@ section[id] {
     }
 
     .logo-portada {
-        width: 105px;
-        height: 105px;
+        width: 115px;
+        height: 115px;
+        max-width: 42vw;
     }
 
     .portada-contenido h1 {
@@ -1280,14 +1339,20 @@ section[id] {
 
     .menu-toggle {
         display: block;
+        width: 100%;
+        cursor: pointer;
+        text-align: center;
+        font-size: 1rem;
     }
 
     .menu-enlaces {
         display: none;
         flex-direction: column;
         align-items: stretch;
+        width: 100%;
         max-height: 70vh;
         overflow-y: auto;
+        overscroll-behavior: contain;
         padding: 8px 14px 15px;
     }
 
@@ -1297,6 +1362,7 @@ section[id] {
 
     .menu-enlaces a {
         display: block;
+        width: 100%;
         padding: 11px 14px;
         font-size: 0.95rem;
     }
@@ -1663,95 +1729,105 @@ video {
         padding: 15px;
     }
 }
-
-/* =========================================
-   MENÚ FLOTANTE DESPLEGABLE ITACE
-   ÚNICO AJUSTE: PANEL CON DESPLAZAMIENTO
-========================================= */
+/* =========================================================
+   MENÚ FLOTANTE ITACE DIGITAL 4.0
+   Bloque único: reemplaza los estilos duplicados del menú.
+   ========================================================= */
 
 .menu-flotante {
     position: fixed !important;
     right: 22px !important;
-    bottom: 85px !important;
+    bottom: 82px !important;
     z-index: 999999 !important;
 }
 
+/* El contenedor details no debe heredar el estilo general de details. */
 .menu-flotante .menu-desplegable {
-    position: static !important;
-    display: block !important;
-    overflow: visible !important;
-    background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
+    position: relative !important;
     margin: 0 !important;
     padding: 0 !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    overflow: visible !important;
 }
 
-/* BOTÓN DEL MENÚ */
+/* Botón redondo ☰ */
 .menu-flotante .menu-desplegable > summary {
-    width: 50px !important;
-    height: 50px !important;
-    box-sizing: border-box !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    background: var(--guinda) !important;
-    color: white !important;
+    width: 56px !important;
+    height: 56px !important;
+    padding: 0 !important;
+    list-style: none !important;
+    cursor: pointer !important;
     border: 3px solid var(--dorado) !important;
     border-radius: 50% !important;
-    font-size: 24px !important;
-    font-weight: bold !important;
-    cursor: pointer !important;
-    list-style: none !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,.3) !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    background: var(--guinda) !important;
+    color: var(--blanco) !important;
+    font-size: 25px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .30) !important;
+    transition: transform var(--transicion), background var(--transicion) !important;
 }
 
 .menu-flotante .menu-desplegable > summary::-webkit-details-marker {
     display: none !important;
 }
 
-/* PANEL: ALTURA LIMITADA Y DESPLAZAMIENTO VERTICAL */
+.menu-flotante .menu-desplegable > summary::marker {
+    content: "" !important;
+}
+
+.menu-flotante .menu-desplegable > summary:hover {
+    background: var(--guinda-oscuro) !important;
+    transform: translateY(-2px);
+}
+
+/* Panel: queda junto al botón y tiene su propio desplazamiento. */
 .menu-flotante .menu-desplegable > .menu-enlaces {
     display: none !important;
     position: fixed !important;
-    right: 82px !important;
-    top: 50% !important;
-    bottom: auto !important;
-    transform: translateY(-50%) !important;
-    width: 260px !important;
-    height: 65vh !important;
-    height: min(65vh, calc(100dvh - 40px)) !important;
-    max-height: calc(100vh - 40px) !important;
-    min-height: 0 !important;
+    right: 90px !important;
+    top: auto !important;
+    bottom: 82px !important;
+    transform: none !important;
+
+    width: min(280px, calc(100vw - 125px)) !important;
+    height: min(590px, calc(100vh - 110px)) !important;
+    max-height: calc(100vh - 110px) !important;
+    min-height: 180px !important;
+
     box-sizing: border-box !important;
     margin: 0 !important;
     padding: 10px !important;
-    background: var(--guinda) !important;
-    border: 3px solid var(--dorado) !important;
-    border-radius: 14px !important;
     flex-direction: column !important;
     align-items: stretch !important;
     justify-content: flex-start !important;
     flex-wrap: nowrap !important;
-    gap: 0 !important;
+    gap: 3px !important;
+
     overflow-y: auto !important;
     overflow-x: hidden !important;
     overscroll-behavior-y: contain !important;
     -webkit-overflow-scrolling: touch !important;
-    touch-action: pan-y !important;
-    scrollbar-width: auto !important;
+    scrollbar-width: thin !important;
     scrollbar-color: var(--dorado) #5c0018 !important;
-    box-shadow: 0 5px 18px rgba(0,0,0,.3) !important;
+
+    border: 3px solid var(--dorado) !important;
+    border-radius: 14px !important;
+    background: var(--guinda) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .30) !important;
 }
 
-/* MOSTRAR EL PANEL AL ABRIR EL DETAILS */
+/* Solo se muestra cuando details tiene el atributo open. */
 .menu-flotante .menu-desplegable[open] > .menu-enlaces {
     display: flex !important;
 }
 
-/* BARRA DE DESPLAZAMIENTO */
 .menu-flotante .menu-enlaces::-webkit-scrollbar {
     width: 12px !important;
 }
@@ -1763,45 +1839,212 @@ video {
 
 .menu-flotante .menu-enlaces::-webkit-scrollbar-thumb {
     background: var(--dorado) !important;
+    border: 2px solid #5c0018 !important;
     border-radius: 10px !important;
 }
 
-/* ENLACES: EVITAR QUE SE ENCOJAN */
-.menu-flotante .menu-desplegable > .menu-enlaces a {
-    display: block !important;
+/* Enlaces independientes y completos; no se comprimen. */
+.menu-flotante .menu-enlaces > a {
+    display: flex !important;
     flex: 0 0 auto !important;
+    align-items: center !important;
     width: 100% !important;
-    min-height: 45px !important;
+    min-height: 44px !important;
     box-sizing: border-box !important;
-    padding: 12px !important;
-    color: white !important;
-    text-decoration: none !important;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .24) !important;
+    border-radius: 7px !important;
+    background: transparent !important;
+    color: var(--blanco) !important;
+    font-size: .92rem !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
     text-align: left !important;
+    text-decoration: none !important;
     white-space: normal !important;
-    border-bottom: 1px solid rgba(255,255,255,.25) !important;
-    border-radius: 5px !important;
 }
 
-.menu-flotante .menu-desplegable > .menu-enlaces a:hover {
+.menu-flotante .menu-enlaces > a:hover,
+.menu-flotante .menu-enlaces > a:focus-visible {
     background: var(--dorado) !important;
-    color: var(--guinda) !important;
+    color: var(--guinda-oscuro) !important;
 }
 
-/* CELULARES */
+/* Adaptación para pantallas pequeñas. */
 @media (max-width: 650px) {
     .menu-flotante {
-        right: 15px !important;
-        bottom: 85px !important;
+        right: 14px !important;
+        bottom: 76px !important;
+    }
+
+    .menu-flotante .menu-desplegable > summary {
+        width: 52px !important;
+        height: 52px !important;
     }
 
     .menu-flotante .menu-desplegable > .menu-enlaces {
-        right: 72px !important;
-        top: 50% !important;
-        bottom: auto !important;
-        transform: translateY(-50%) !important;
-        width: 230px !important;
-        height: 60vh !important;
-        height: min(60vh, calc(100dvh - 40px)) !important;
-        max-height: calc(100vh - 40px) !important;
+        right: 76px !important;
+        bottom: 76px !important;
+        width: min(250px, calc(100vw - 105px)) !important;
+        height: min(65vh, calc(100vh - 100px)) !important;
+        max-height: calc(100vh - 100px) !important;
+    }
+}
+
+@media (max-height: 480px) {
+    .menu-flotante .menu-desplegable > .menu-enlaces {
+        height: calc(100vh - 30px) !important;
+        max-height: calc(100vh - 30px) !important;
+        bottom: 15px !important;
+    }
+}
+
+/* =========================================
+   REPRODUCTOR DE MÚSICA ITACE DIGITAL 4.0
+   Agregado sin modificar los estilos anteriores
+   ========================================= */
+
+.reproductor-itace {
+    position: fixed;
+    left: 22px;
+    bottom: 22px;
+    z-index: 99998;
+}
+
+.boton-musica {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    border: 3px solid var(--dorado);
+    border-radius: 50%;
+    background: var(--guinda);
+    color: var(--blanco);
+    font-size: 25px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.28);
+    transition: transform var(--transicion), background var(--transicion);
+}
+
+.boton-musica:hover {
+    background: var(--guinda-oscuro);
+    transform: translateY(-3px);
+}
+
+.panel-musica {
+    position: absolute;
+    left: 0;
+    bottom: 68px;
+    width: min(310px, calc(100vw - 40px));
+    padding: 18px;
+    border: 3px solid var(--guinda);
+    outline: 2px solid var(--dorado);
+    outline-offset: 2px;
+    border-radius: 16px;
+    background: var(--blanco);
+    color: var(--texto);
+    box-shadow: 0 10px 30px rgba(49, 0, 13, 0.25);
+}
+
+.encabezado-musica {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--dorado);
+}
+
+.encabezado-musica span {
+    color: var(--guinda);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.encabezado-musica h3 {
+    margin-top: 3px;
+    color: var(--guinda);
+    font-size: 1.05rem;
+}
+
+.encabezado-musica button {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid var(--dorado);
+    border-radius: 50%;
+    background: var(--guinda);
+    color: var(--blanco);
+    font-size: 21px;
+    line-height: 1;
+}
+
+.nombre-cancion {
+    margin: 15px 0 12px;
+    color: var(--guinda);
+    font-weight: 800;
+    text-align: center;
+}
+
+.controles-musica {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.controles-musica button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    padding: 0;
+    border: 2px solid var(--dorado);
+    border-radius: 50%;
+    background: var(--guinda);
+    color: var(--blanco);
+    font-size: 17px;
+    transition: transform var(--transicion), background var(--transicion);
+}
+
+.controles-musica button:hover {
+    transform: scale(1.07);
+    background: var(--guinda-oscuro);
+}
+
+.controles-musica #reproducir-musica {
+    width: 50px;
+    height: 50px;
+    background: var(--dorado);
+    color: var(--guinda-oscuro);
+    font-size: 20px;
+}
+
+.estado-musica {
+    margin: 13px 0 0;
+    color: var(--gris);
+    font-size: 0.82rem;
+    text-align: center;
+}
+
+@media (max-width: 650px) {
+    .reproductor-itace {
+        left: 14px;
+        bottom: 14px;
+    }
+
+    .boton-musica {
+        width: 50px;
+        height: 50px;
+    }
+
+    .panel-musica {
+        bottom: 62px;
     }
 }
